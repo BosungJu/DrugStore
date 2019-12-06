@@ -10,7 +10,6 @@ public static class CustomerManager
     {
         Customer customer;
         List<Request> requests = ParsingRequest.Requests;
-
         List<Request> onRequests = new List<Request>();
         
         for (int i = 0; i < MaxRequestCount; ++i)
@@ -23,7 +22,8 @@ public static class CustomerManager
         foreach (Request request in onRequests)
         {
             customer = new Customer();
-            customer.request = request;
+            customer.Request = request;
+            customer.Type = request.Type;
         }
         
     }

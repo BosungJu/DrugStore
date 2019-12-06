@@ -16,8 +16,6 @@ public class Customer
     }
     #endregion
     
-    public CostumeColor Color;
-    public string Request { get; set; }
-    public CustomerType Type { get; set; }
-    public Request request;
+    public Request Request;
+    public CustomerType Type;
 }

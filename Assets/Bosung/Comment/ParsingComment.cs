@@ -11,7 +11,7 @@ public static class ParsingComment
     public static void Parse()
     {
         Commnents = new List<List<string>>();
-        Text text = Resources.Load<Text>(@"Comments\Comment_" + GameManager.Instance.Day +".txt");
+        TextAsset text = Resources.Load<TextAsset>(@"Comments\Comment_" + GameManager.Instance.Day +".txt");
 
         string[] comments = text.text.Split('\n');
         
