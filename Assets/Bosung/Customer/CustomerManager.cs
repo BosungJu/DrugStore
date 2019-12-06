@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CustomerManager
+public static class CustomerManager
 {
-    private List<Customer> Customers;
+    private static List<Customer> Customers;
 
-    public void AddCustomer()
+    public static void AddCustomer()
     {
-           
+        Customer customer;
+        List<Request> requests = ParsingRequest.Requests;
+        
+        
     }
 }

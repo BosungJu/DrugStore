@@ -4,11 +4,11 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ParsingComment
+public static class ParsingComment
 {
-    public List<List<string>> Commnents { get; private set; }
+    public static List<List<string>> Commnents { get; private set; }
     
-    public void Parse()
+    public static void Parse()
     {
         Commnents = new List<List<string>>();
         Text text = Resources.Load<Text>(@"Comments\Comment_" + GameManager.Instance.Day +".txt");

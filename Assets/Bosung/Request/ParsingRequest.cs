@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ParsingRequest
+public static class ParsingRequest
 {
-    private List<string> NameSet;
-    public List<Request> Requests { get; private set; }
+    private static List<string> NameSet;
+    public static List<Request> Requests { get; private set; }
 
-    public void ParseName()
+    public static void ParseName()
     {
         Text text = Resources.Load<Text>(@"names.txt");
         foreach (string name in text.text.Split('\n'))
@@ -17,7 +17,7 @@ public class ParsingRequest
         }
     }
     
-    public void Parse()
+    public static void Parse()
     {
         Text text = Resources.Load<Text>(@"Requests\Requests_" + GameManager.Instance.Day + ".txt");
 
