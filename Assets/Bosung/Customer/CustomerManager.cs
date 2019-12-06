@@ -4,13 +4,27 @@ using UnityEngine;
 
 public static class CustomerManager
 {
-    private static List<Customer> Customers;
-
-    public static void AddCustomer()
+    public static List<Customer> Customers { get; private set; }
+    private static readonly int MaxRequestCount = 5;
+    public static void AddCustomers()
     {
         Customer customer;
         List<Request> requests = ParsingRequest.Requests;
+
+        List<Request> onRequests = new List<Request>();
         
+        for (int i = 0; i < MaxRequestCount; ++i)
+        {
+            int random = Random.Range(0, requests.Count);
+            onRequests.Add(requests[random]);
+            requests.RemoveAt(random);
+        }
+
+        foreach (Request request in onRequests)
+        {
+            customer = new Customer();
+            customer.request = request;
+        }
         
     }
 }
