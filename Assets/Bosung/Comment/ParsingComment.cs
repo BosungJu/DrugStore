@@ -4,16 +4,16 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public static class ParsingComment
+public class ParsingComment : MonoBehaviour
 {
-    public static List<List<string>> Commnents { get; private set; }
+    public TextAsset txt;
+
+    public List<List<string>> Commnents { get; private set; }
     
-    public static void Parse()
+    public void Parse()
     {
         Commnents = new List<List<string>>();
-        TextAsset text = Resources.Load<TextAsset>(@"Comments\Comment_" + GameManager.Instance.Day);
-
-        string[] comments = text.text.Split('\n');
+        string[] comments = txt.text.Split('\n');
         
         /*
          * 띄어쓰기로 문장 구분
