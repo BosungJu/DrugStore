@@ -16,6 +16,7 @@ public class ParsingRequest : MonoBehaviour
 
     private void Awake()
     {
+        Requests = new List<Request>();
         NameStatic = NameTxt;
         RequestStatic = RequestTxt;
     }
@@ -47,6 +48,8 @@ public class ParsingRequest : MonoBehaviour
             rq.Color = (Customer.CostumeColor)int.Parse(req[1]);
             rq.Title = req[2];
             rq.Text = req[3];
+
+            Requests.Add(rq);
         }
     }
     
