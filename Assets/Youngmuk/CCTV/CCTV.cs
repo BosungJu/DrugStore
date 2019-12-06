@@ -38,7 +38,7 @@ public class CCTV : MonoBehaviour
         pr.ParseName();
         pr.Parse();
 
-        name_UI.GetComponent<Text>().text = ParsingRequest.Requests[Random.Range(0, ParsingRequest.Requests.Count)].Name;
+        name_UI.GetComponent<Text>().text = "철수";
 
 
         talk_txt = talklist[txt_n];

@@ -15,7 +15,6 @@ public class ParsingRequest : MonoBehaviour
     {
         foreach (string name in name_txt.text.Split('\n'))
         {
-            //Debug.Log(name);
             NameSet.Add(name);
         }
     }
