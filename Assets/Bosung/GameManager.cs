@@ -7,20 +7,18 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    private bool isNight;
+    private static bool isInit;
+    public bool isNight { get; private set; }
+    public int Day { get; private set; }
 
     private void Awake()
     {
-        Instance = this;
+        if (!isInit)
+        {
+            Instance = this;
+            isInit = true;
+            Day = 1;
+        }
     }
 
-    void Start()
-    {
-        
-    }
-    
-    void Update()
-    {
-        
-    }
 }

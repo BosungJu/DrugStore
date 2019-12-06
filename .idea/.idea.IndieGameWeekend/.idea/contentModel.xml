@@ -7,15 +7,22 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Bosung" t="Include">
+          <e p="Comment" t="Include">
+            <e p="ParsingComment.cs" t="Include" />
+          </e>
           <e p="Customer" t="Include">
             <e p="Customer.cs" t="Include" />
             <e p="CustomerManager.cs" t="Include" />
-            <e p="Normal.cs" t="Include" />
           </e>
           <e p="GameManager.cs" t="Include" />
           <e p="Request" t="Include">
             <e p="ParsingRequest.cs" t="Include" />
             <e p="Request.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Resourses" t="Include">
+          <e p="Comments" t="Include">
+            <e p="Comment_1.txt" t="Include" />
           </e>
         </e>
         <e p="Youngmuk" t="Include">

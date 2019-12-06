@@ -4,5 +4,9 @@ using UnityEngine;
 
 public class Request
 {
-    // 이름 생김새 복장, 꿈정보
+    public Customer.CustomerType Type { get; set; }
+    public string Name { get; set; }
+    public Customer.CostumeColor Color { get; set; }
+    public string Text { get; set; }
+    public int Cost { get; set; }
 }

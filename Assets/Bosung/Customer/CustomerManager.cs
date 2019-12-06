@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CustomerManager
 {
-    private List<Normal> normals;
-    
+    private List<Customer> Customers;
+
+    public void AddCustomer()
+    {
+           
+    }
 }

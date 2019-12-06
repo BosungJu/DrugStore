@@ -5,32 +5,39 @@ using UnityEngine.UI;
 
 public class ParsingRequest
 {
+    private List<string> NameSet;
+    public List<Request> Requests { get; private set; }
+
+    public void ParseName()
+    {
+        Text text = Resources.Load<Text>(@"names.txt");
+        foreach (string name in text.text.Split('\n'))
+        {
+            NameSet.Add(name);
+        }
+    }
+    
     public void Parse()
     {
-        Text text = Resources.Load<Text>("Requests.txt");
+        Text text = Resources.Load<Text>(@"Requests\Requests_" + GameManager.Instance.Day + ".txt");
 
         string[] requests = text.text.Split('\n');
         
         /*
-         *type color request 
+         *type color request cost
          */
         
         foreach (string request in requests)
         {
             string[] req = request.Split(' ');
+            Request rq = new Request();
 
-            switch ((Customer.CustomerType)int.Parse(req[0]))
-            {
-                case Customer.CustomerType.Normal:
-                    
-                    break;
-                case Customer.CustomerType.Mafia:
-                    break;
-                case Customer.CustomerType.Government:
-                    break;
-            }
+            rq.Name = NameSet[Random.Range(0, NameSet.Count)];
+            rq.Type = (Customer.CustomerType)int.Parse(req[0]);
+            rq.Color = (Customer.CostumeColor)int.Parse(req[1]);
+            rq.Text = req[2];
+            rq.Cost = int.Parse(req[3]);
         }
-
     }
     
 }
