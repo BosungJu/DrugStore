@@ -18,6 +18,11 @@
             <e p="Request.cs" t="Include" />
           </e>
         </e>
+        <e p="Youngmuk" t="Include">
+          <e p="Person" t="Include">
+            <e p="Person.cs" t="Include" />
+          </e>
+        </e>
       </e>
       <e p="IndieGameWeekend.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />

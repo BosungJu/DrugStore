@@ -5,5 +5,5 @@ using UnityEngine;
 public class Normal : Customer
 {
     private readonly CustomerType type = CustomerType.Normal;
-
+    
 }

@@ -15,6 +15,7 @@ public class Customer
         None = -1, Color0 = 0, Color1 = 1, Color2 = 2
     }
     #endregion
-    
+
+    public CostumeColor Color;
     public string Request { get; set; }
 }

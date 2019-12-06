@@ -5,16 +5,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance
-    {
-        get
-        {
-            if (Instance == null) throw new NullReferenceException();
-            else return Instance;
-        } 
-        private set;
-    }
-    
+    public static GameManager Instance { get; private set; }
+
     private bool isNight;
 
     private void Awake()
