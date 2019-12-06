@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Person : MonoBehaviour
 {
-    //이동할 목표 오브젝트
     [Header("도착오브젝트")]
     public GameObject target;
     static bool arrive = false; //도착여부
 
-    //이동속도
+    [Header("손님종류")]
+    public Customer.CustomerType type;
+
     [Header("이동속도")]
     public float speed;
 
@@ -27,13 +28,14 @@ public class Person : MonoBehaviour
         Move();
     }
 
-    //애니메이션
+    #region [애니메이션]
     void Ani()
     {
         ani.SetBool("Move", !arrive);
     }
+    #endregion
 
-    //이동
+    #region [이동]
     void Move()
     {
         if (!arrive)
@@ -48,4 +50,5 @@ public class Person : MonoBehaviour
         else
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
+    #endregion
 }
