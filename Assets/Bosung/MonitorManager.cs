@@ -7,7 +7,7 @@ public class MonitorManager : MonoBehaviour
 {
     private readonly string NodePath = @"Prefabs\";
     
-    private static MonitorManager instance 
+    //private static MonitorManager instance 
     
     private void Awake()
     {
