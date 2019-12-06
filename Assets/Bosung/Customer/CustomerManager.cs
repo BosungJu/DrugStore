@@ -8,7 +8,8 @@ public static class CustomerManager
     private static readonly int MaxRequestCount = 5;
     public static void AddCustomers()
     {
-        Customer customer;
+        ParsingRequest.ParseName();
+        ParsingRequest.Parse();
         List<Request> requests = ParsingRequest.Requests;
         List<Request> onRequests = new List<Request>();
         
@@ -21,9 +22,10 @@ public static class CustomerManager
 
         foreach (Request request in onRequests)
         {
-            customer = new Customer();
+            Customer customer = new Customer();
             customer.Request = request;
             customer.Type = request.Type;
+            Customers.Add(customer);
         }
         
     }
