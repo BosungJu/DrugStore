@@ -22,6 +22,7 @@ public class ParsingRequest : MonoBehaviour
 
     public static void ParseName()
     {
+        NameSet = new List<string>();
         foreach (string name in NameStatic.text.Split('\n'))
         {
             NameSet.Add(name);

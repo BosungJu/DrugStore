@@ -26,7 +26,7 @@ public class ParsingComment : MonoBehaviour
         
         foreach (string comment in comments)
         {
-            Commnents.Add(comment.Split(' ').ToList());
+            Commnents.Add(comment.Split('|').ToList());
         }
     }
 }
