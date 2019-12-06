@@ -24,7 +24,7 @@ public class ParsingRequest : MonoBehaviour
         string[] requests = request_txt.text.Split('\n');
         
         /*
-         *type color request cost
+         * type color title data
          */
         
         foreach (string request in requests)
@@ -35,8 +35,8 @@ public class ParsingRequest : MonoBehaviour
             rq.Name = NameSet[Random.Range(0, NameSet.Count)];
             rq.Type = (Customer.CustomerType)int.Parse(req[0]);
             rq.Color = (Customer.CostumeColor)int.Parse(req[1]);
-            rq.Text = req[2];
-            rq.Cost = int.Parse(req[3]);
+            rq.Title = req[2];
+            rq.Text = req[3];
         }
     }
     
