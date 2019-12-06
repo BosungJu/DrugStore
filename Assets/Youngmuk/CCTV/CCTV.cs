@@ -34,6 +34,13 @@ public class CCTV : MonoBehaviour
         ps.Parse();
         talklist = ps.Commnents[Random.Range(0, ps.Commnents.Count)];
 
+        ParsingRequest pr = emp.GetComponent<ParsingRequest>();
+        pr.ParseName();
+        pr.Parse();
+
+        name_UI.GetComponent<Text>().text = ParsingRequest.Requests[Random.Range(0, ParsingRequest.Requests.Count)].Name;
+
+
         talk_txt = talklist[txt_n];
 
         Destroy(emp);
@@ -49,7 +56,6 @@ public class CCTV : MonoBehaviour
 
     void print_txt()
     {
-        name_UI.GetComponent<Text>().text = "민수";
         txt_time += Time.deltaTime;
         if (talk_txt.Length > txt_p)
         {

@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public static class ParsingRequest
+public class ParsingRequest : MonoBehaviour
 {
-    private static List<string> NameSet;
+    public TextAsset name_txt;
+    public TextAsset request_txt;
+
+    [HideInInspector] public List<string> NameSet;
     public static List<Request> Requests { get; private set; }
 
-    public static void ParseName()
+    public void ParseName()
     {
-        Text text = Resources.Load<Text>(@"names.txt");
-        foreach (string name in text.text.Split('\n'))
+        foreach (string name in name_txt.text.Split('\n'))
         {
+            //Debug.Log(name);
             NameSet.Add(name);
         }
     }
     
-    public static void Parse()
+    public void Parse()
     {
-        TextAsset text = Resources.Load<TextAsset>(@"Requests\Requests_" + GameManager.Instance.Day);
-
-        string[] requests = text.text.Split('\n');
+        string[] requests = request_txt.text.Split('\n');
         
         /*
          *type color request cost
