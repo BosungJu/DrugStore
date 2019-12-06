@@ -5,23 +5,32 @@ using UnityEngine.UI;
 
 public class ParsingRequest : MonoBehaviour
 {
-    public TextAsset name_txt;
-    public TextAsset request_txt;
+    public TextAsset NameTxt;
+    static TextAsset NameStatic;
 
-    [HideInInspector] public List<string> NameSet;
+    public TextAsset RequestTxt;
+    static TextAsset RequestStatic;
+
+    public static List<string> NameSet;
     public static List<Request> Requests { get; private set; }
 
-    public void ParseName()
+    private void Awake()
     {
-        foreach (string name in name_txt.text.Split('\n'))
+        NameStatic = NameTxt;
+        RequestStatic = RequestTxt;
+    }
+
+    public static void ParseName()
+    {
+        foreach (string name in NameStatic.text.Split('\n'))
         {
             NameSet.Add(name);
         }
     }
     
-    public void Parse()
+    public static void Parse()
     {
-        string[] requests = request_txt.text.Split('\n');
+        string[] requests = RequestStatic.text.Split('\n');
         
         /*
          * type color title data

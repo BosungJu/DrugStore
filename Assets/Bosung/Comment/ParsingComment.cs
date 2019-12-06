@@ -6,14 +6,19 @@ using UnityEngine.UI;
 
 public class ParsingComment : MonoBehaviour
 {
-    public TextAsset txt;
+    public TextAsset Text;
+    static TextAsset TextStatic;
+    public static List<List<string>> Commnents { get; private set; }
 
-    public List<List<string>> Commnents { get; private set; }
-    
-    public void Parse()
+    private void Awake()
+    {
+        TextStatic = Text;
+    }
+
+    public static void Parse()
     {
         Commnents = new List<List<string>>();
-        string[] comments = txt.text.Split('\n');
+        string[] comments = TextStatic.text.Split('\n');
         
         /*
          * 띄어쓰기로 문장 구분
