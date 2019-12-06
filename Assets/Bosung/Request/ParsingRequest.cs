@@ -19,7 +19,7 @@ public static class ParsingRequest
     
     public static void Parse()
     {
-        TextAsset text = Resources.Load<TextAsset>(@"Requests\Requests_" + GameManager.Instance.Day + ".txt");
+        TextAsset text = Resources.Load<TextAsset>(@"Requests\Requests_" + GameManager.Instance.Day);
 
         string[] requests = text.text.Split('\n');
         
