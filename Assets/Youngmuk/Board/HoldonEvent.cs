@@ -13,12 +13,10 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public string data;
     public Text text;
 
-    public Camera camera;
-
     private void Start()
     {
         text.text = data;
-        GetComponent<BoxCollider2D>().offset = new Vector2(text.text.Length * 8, 0);
+       // GetComponent<BoxCollider2D>().offset = new Vector2(text.text.Length * 8, 0);
         GetComponent<BoxCollider2D>().size = new Vector2(text.text.Length * 16, 50);
         GetComponent<RectTransform>().sizeDelta = new Vector2(text.text.Length * 16, 50);
     }
@@ -52,7 +50,7 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 {
                     //Debug.Log(collider.name);
                     transform.position = hit[i].transform.position;
-                    transform.localPosition -= new Vector3(text.text.Length * 8, 0, 0);
+                    //transform.localPosition -= new Vector3(text.text.Length * 8, 0, 0);
                     GetComponent<HoldonEvent>().set = true;
                     hit[i].transform.gameObject.SetActive(false);
                     text.color = Color.green;
