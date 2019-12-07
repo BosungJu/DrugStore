@@ -28,7 +28,8 @@ public class NavigationManager : MonoBehaviour
             }
         }
     }
-    
+   
+
     public void OnClick(int num)
     {
         NowScene = (SceneType)num;

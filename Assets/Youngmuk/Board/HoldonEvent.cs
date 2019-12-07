@@ -85,6 +85,162 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                     }
                 }
             }
+            else if (data.Equals("양초"))
+            {
+                for (int i = 0; i < hit.Length; i++)
+                {
+                    if (hit[i].transform.gameObject.GetComponent<HoldonEvent>() && hit[i].transform.gameObject.GetComponent<HoldonEvent>().data.Equals("태양"))
+                    {
+                        data = "밀랍";
+                        text.text = data;
+                        hit[i].transform.gameObject.SetActive(false);
+                        break;
+                    }
+                }
+            }
+            else if (data.Equals("태양"))
+            {
+                for (int i = 0; i < hit.Length; i++)
+                {
+                    if (hit[i].transform.gameObject.GetComponent<HoldonEvent>() && hit[i].transform.gameObject.GetComponent<HoldonEvent>().data.Equals("양초"))
+                    {
+                        data = "밀랍";
+                        text.text = data;
+                        hit[i].transform.gameObject.SetActive(false);
+                        break;
+                    }
+                }
+            }
+            else if (data.Equals("깃털"))
+            {
+                for (int i = 0; i < hit.Length; i++)
+                {
+                    if (hit[i].transform.gameObject.GetComponent<HoldonEvent>() && hit[i].transform.gameObject.GetComponent<HoldonEvent>().data.Equals("밀랍"))
+                    {
+                        data = "날개";
+                        text.text = data;
+                        hit[i].transform.gameObject.SetActive(false);
+                        break;
+                    }
+                }
+            }
+            else if (data.Equals("미랍"))
+            {
+                for (int i = 0; i < hit.Length; i++)
+                {
+                    if (hit[i].transform.gameObject.GetComponent<HoldonEvent>() && hit[i].transform.gameObject.GetComponent<HoldonEvent>().data.Equals("깃털"))
+                    {
+                        data = "날개";
+                        text.text = data;
+                        hit[i].transform.gameObject.SetActive(false);
+                        break;
+                    }
+                }
+            }
+            else if (data.Equals("무지개"))
+            {
+                for (int i = 0; i < hit.Length; i++)
+                {
+                    if (hit[i].transform.gameObject.GetComponent<HoldonEvent>() && hit[i].transform.gameObject.GetComponent<HoldonEvent>().data.Equals("뿔"))
+                    {
+                        data = "유니콘";
+                        text.text = data;
+                        hit[i].transform.gameObject.SetActive(false);
+                        break;
+                    }
+                }
+            }
+            else if (data.Equals("뿔"))
+            {
+                for (int i = 0; i < hit.Length; i++)
+                {
+                    if (hit[i].transform.gameObject.GetComponent<HoldonEvent>() && hit[i].transform.gameObject.GetComponent<HoldonEvent>().data.Equals("무지개"))
+                    {
+                        data = "유니콘";
+                        text.text = data;
+                        hit[i].transform.gameObject.SetActive(false);
+                        break;
+                    }
+                }
+            }
+            else if (data.Equals("피"))
+            {
+                for (int i = 0; i < hit.Length; i++)
+                {
+                    if (hit[i].transform.gameObject.GetComponent<HoldonEvent>() && hit[i].transform.gameObject.GetComponent<HoldonEvent>().data.Equals("목각인형"))
+                    {
+                        data = "저주";
+                        text.text = data;
+                        hit[i].transform.gameObject.SetActive(false);
+                        break;
+                    }
+                }
+            }
+            else if (data.Equals("목각인형"))
+            {
+                for (int i = 0; i < hit.Length; i++)
+                {
+                    if (hit[i].transform.gameObject.GetComponent<HoldonEvent>() && hit[i].transform.gameObject.GetComponent<HoldonEvent>().data.Equals("피"))
+                    {
+                        data = "저주";
+                        text.text = data;
+                        hit[i].transform.gameObject.SetActive(false);
+                        break;
+                    }
+                }
+            }
+            else if (data.Equals("저주"))
+            {
+                for (int i = 0; i < hit.Length; i++)
+                {
+                    if (hit[i].transform.gameObject.GetComponent<HoldonEvent>() && hit[i].transform.gameObject.GetComponent<HoldonEvent>().data.Equals("인형"))
+                    {
+                        data = "저주인형";
+                        text.text = data;
+                        hit[i].transform.gameObject.SetActive(false);
+                        break;
+                    }
+                }
+            }
+            else if (data.Equals("인형"))
+            {
+                for (int i = 0; i < hit.Length; i++)
+                {
+                    if (hit[i].transform.gameObject.GetComponent<HoldonEvent>() && hit[i].transform.gameObject.GetComponent<HoldonEvent>().data.Equals("저주"))
+                    {
+                        data = "저주인형";
+                        text.text = data;
+                        hit[i].transform.gameObject.SetActive(false);
+                        break;
+                    }
+                }
+            }
+            else if (data.Equals("저주인형"))
+            {
+                for (int i = 0; i < hit.Length; i++)
+                {
+                    if (hit[i].transform.gameObject.GetComponent<HoldonEvent>() && hit[i].transform.gameObject.GetComponent<HoldonEvent>().data.Equals("뿔"))
+                    {
+                        data = "부두술";
+                        text.text = data;
+                        hit[i].transform.gameObject.SetActive(false);
+                        break;
+                    }
+                }
+            }
+            else if (data.Equals("뿔"))
+            {
+                for (int i = 0; i < hit.Length; i++)
+                {
+                    if (hit[i].transform.gameObject.GetComponent<HoldonEvent>() && hit[i].transform.gameObject.GetComponent<HoldonEvent>().data.Equals("저주인형"))
+                    {
+                        data = "부두술";
+                        text.text = data;
+                        hit[i].transform.gameObject.SetActive(false);
+                        break;
+                    }
+                }
+            }
             follow_mouse = false;
         }
 

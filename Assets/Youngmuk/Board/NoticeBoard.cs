@@ -9,10 +9,11 @@ public class NoticeBoard : MonoBehaviour
     public GameObject Text;
     public GameObject BlankObject;
     public GameObject BlackPos;
+    public GameObject sub;
 
-    public bool[] solveList;
+    public static bool[] solveList = { false, false, false, false, false };
 
-    int request_n = 0;
+    public static int request_n = 0;
     public static int solve_n = 0;
 
     public static int posion = 0;
@@ -28,7 +29,7 @@ public class NoticeBoard : MonoBehaviour
     {
         { "건전지", "귀신", "중절모", "손전등", "빛", "가족사진", "아기", "아기귀신", "ㅁ", "ㅁ", "ㅁ", "ㅁ"},
         { "저울", "항아리", "양초", "깃털", "말", "태양", "PLX-360", "밀랍", "날개", "ㅁ", "ㅁ", "ㅁ"},
-        { "거울", "나무", "피", "null", "눈", "무지개", "뿔", "인형", "ㅁ", "ㅁ", "ㅁ", "ㅁ"}
+        { "거울", "나무", "피", "null", "눈", "무지개", "뿔", "인형", "목각인형", "ㅁ", "ㅁ", "ㅁ"}
     };
 
     List<GameObject> list = new List<GameObject>();
@@ -47,6 +48,9 @@ public class NoticeBoard : MonoBehaviour
             Destroy(list[i]);
         list.Clear();
 
+        sub.SetActive(true);
+        gameObject.SetActive(false);
+
     }
 
     private void OnEnable()
@@ -54,11 +58,22 @@ public class NoticeBoard : MonoBehaviour
         Init();
     }
 
+    public void goback()
+    {
+        sub.SetActive(true);
+        this.gameObject.SetActive(false);
+    }
+
     public void Extraction()
     {
-        if(request_n == 0 && solve_n == 0 && GameManager.Instance.Day == 1 && posion <= 0)
+        for(int i = 0; i < 5; i++)
         {
-            posion += 1;
+            if (request_n == i && solve_n == 0 && !solveList[i])
+            {
+                solveList[i] = true;
+                posion += 1;
+                Text.GetComponent<Text>().text = "추출이 완료 되었습니다.";
+            }
         }
     }
 
@@ -83,12 +98,6 @@ public class NoticeBoard : MonoBehaviour
     void Init()
     {
         solve_n = 0;
-        if (GameManager.Instance.Day == 1)
-            request_n = 0;
-        else if(GameManager.Instance.Day == 2)
-            request_n = Random.Range(1, 3);
-        else if (GameManager.Instance.Day == 3)
-            request_n = Random.Range(3, 5);
 
         Debug.Log(ParsingRequest.Requests.Count + " " + request_n);
 

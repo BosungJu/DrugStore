@@ -8,7 +8,14 @@ public class NightSceneMove : MonoBehaviour
     public GameObject NoticeBoard;
     public GameObject NavigationBar;
     public GameObject DrugRoom;
-    
+
+    private void OnEnable()
+    {
+        DreamTv.SetActive(true);
+        NoticeBoard.SetActive(false);
+        DrugRoom.SetActive(false);
+    }
+
     public void DoMoveDrugRoom()
     {
         DrugRoom.SetActive(true);

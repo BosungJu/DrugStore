@@ -27,6 +27,26 @@ public class DreamTv : MonoBehaviour
 
     private void OnEnable()
     {
+        for (int i = 0; i < 9; i++)
+            TvOnOff[i] = false;
+        if (GameManager.Instance.Day == 1)
+        {
+            TvOnOff[1] = true;
+            TvOnOff[3] = true;
+        }
+        else if (GameManager.Instance.Day == 2)
+        {
+            TvOnOff[0] = true;
+            TvOnOff[2] = true;
+        }
+        else if (GameManager.Instance.Day == 3)
+        {
+            TvOnOff[4] = true;
+            TvOnOff[6] = true;
+            TvOnOff[8] = true;
+        }
+        for (int i = 0; i < 9; i++)
+            Tv[i].SetActive(TvOnOff[i]);
         showtext("");
         showItem();
     }

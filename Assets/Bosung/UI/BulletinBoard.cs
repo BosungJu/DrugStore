@@ -32,6 +32,8 @@ public class BulletinBoard : MonoBehaviour
         detailView.GetChild(2).GetComponent<Text>().text = CustomerManager.Customers[index].Request.Title;
         detailView.GetChild(3).GetComponent<Text>().text = "이름: " + CustomerManager.Customers[index].Request.Name;
         detailView.GetChild(4).GetComponent<Text>().text = CustomerManager.Customers[index].Request.Text;
+
+
         nowIndex = index;
     }
 

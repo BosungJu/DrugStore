@@ -31,7 +31,7 @@ public class Password : MonoBehaviour
     {
         if (s.Equals(answer))
         {
-            if(!NoticeBoard.FindGetItem("PLX-360"))
+            if(!NoticeBoard.itemsday[1,6])
                 nextimg(next_img, now_img);
             else
                 nextimg(next_img2, now_img);
