@@ -10,8 +10,7 @@ public class RequestButton : MonoBehaviour
     {
         Debug.Log(RequestPaper.Instance.Requests.Count);
         if (RequestPaper.Instance.Requests.Count > 0) { Debug.Log(RequestPaper.Instance.Requests[0].Name); }
-        if(RequestPaper.Instance != null)
-            RequestPaper.Instance.SetRequest();
+        RequestPaper.Instance.SetRequest();
         Debug.Log((RequestPaper.Instance != null).ToString());
     }
 

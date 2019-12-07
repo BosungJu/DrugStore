@@ -8,9 +8,17 @@ public class Fade : MonoBehaviour
 {
     public Image image;
     public GameObject CancleButton;
+    public static Fade Instance { get; private set; }
 
     private static readonly Color DownColor = new Color(0, 0, 0, 220f/255);
     private static readonly Color UpColor = new Color(0, 0, 0, 0);
+
+    delegate void Func();
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     public void DoFadeDown()
     {
@@ -26,12 +34,6 @@ public class Fade : MonoBehaviour
         CancleButton.SetActive(false);
     }
 
-    /*private IEnumerable WaitForSec(float sec, delegate void func)
-    {
-        yield return new WaitForSeconds(sec);
-        func();
-    }*/
-    
     public void DoFadeInOut()
     {
         

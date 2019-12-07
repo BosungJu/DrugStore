@@ -39,7 +39,6 @@ public class NavigationManager : MonoBehaviour
             {
                 if (i == 0)
                 {
-                    Debug.Log(MonitorManager.Instance.Nodes);
                     MonitorManager.Instance.Nodes.ForEach(x => x.gameObject.SetActive(false));
                 }
                 prefabs[i].SetActive(false);
@@ -57,8 +56,4 @@ public class NavigationManager : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
-    {
-        
-    }
 }

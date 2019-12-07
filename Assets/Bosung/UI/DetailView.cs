@@ -18,14 +18,14 @@ public class DetailView : MonoBehaviour
     public void DisableButton()
     {
         bool flag = false;
-        AllreadyInputIndexs.ForEach((x) =>
+        AllreadyInputIndexs.ForEach(x =>
         {
             if (x == BulletinBoard.Instance.nowIndex)
             {
                 flag = true;
             }
         });
-
+        Debug.Log("Detail" + flag);
         if (flag)
         {
             transform.GetChild(0).GetComponent<Image>().color = new Color(70f/255, 70f/255, 70f/255, 255f/255);
@@ -34,7 +34,7 @@ public class DetailView : MonoBehaviour
         else
         {
             transform.GetChild(0).GetComponent<Image>().color = new Color(255f/255, 255f/255, 255f/255, 255f/255);
-            transform.GetChild(0).GetComponent<Button>().interactable = false;
+            transform.GetChild(0).GetComponent<Button>().interactable = true;
         }
     }
 }

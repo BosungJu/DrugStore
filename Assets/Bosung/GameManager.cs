@@ -37,6 +37,11 @@ public class GameManager : MonoBehaviour
     {
         isNight = true;
         Night.SetActive(true);
+        MonitorManager.Instance.Nodes.ForEach(x => Destroy(x.gameObject));
+        MonitorManager.Instance.Nodes.Clear();
+        if (!BulletinBoard.Instance.isOpenList) BulletinBoard.Instance.BackOnClick();
+        PopUpChange.Instance.ClosePopUp();
+        Fade.Instance.DoFadeUp();
         Afternoon.SetActive(false);
         PopUpChange.Instance.NightPopUp.transform.parent.gameObject.SetActive(false);
     }
@@ -48,7 +53,12 @@ public class GameManager : MonoBehaviour
         Day++;
         DayText.text = "2019-12-" + (7 + Day);
         PopUpChange.Instance.NightPopUp.transform.parent.gameObject.SetActive(true);
+        DetailView.AllreadyInputIndexs.Clear();
+        RequestPaper.Instance.RequestReset();
+        DetailView.Instance.DisableButton();
         NavigationManager.Instance.Init();
+        Afternoon.SetActive(true);
+        Debug.Log("Day = " + Day);
     }
 
 }

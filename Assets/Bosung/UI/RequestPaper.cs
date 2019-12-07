@@ -9,7 +9,7 @@ public class RequestPaper : MonoBehaviour
     public static RequestPaper Instance { get; private set; }
     public GameObject Request;
     public int index;
-    public List<Request> Requests;
+    public List<Request> Requests { get; private set; }
 
     private void Awake()
     {
@@ -18,8 +18,15 @@ public class RequestPaper : MonoBehaviour
         index = 0;
     }
 
+    public void RequestReset()
+    {
+        Requests.Clear();
+        index = 0;
+    }
+
     public void SetRequest()
     {
+        Debug.Log(index);
         Request.transform.GetChild(2).GetComponent<Text>().text = Requests[index].Name;
         //Request.transform.GetChild(3).GetComponent<Image>().sprite = null;
         Request.transform.GetChild(4).GetComponent<Text>().text = Requests[index].Text;
@@ -27,7 +34,6 @@ public class RequestPaper : MonoBehaviour
 
     public void AddRequest()
     {
-        Debug.Log(index);
         Requests.Add(CustomerManager.Customers[BulletinBoard.Instance.nowIndex].Request);
         DetailView.AllreadyInputIndexs.Add(BulletinBoard.Instance.nowIndex);
         DetailView.Instance.DisableButton();

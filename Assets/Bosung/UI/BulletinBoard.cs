@@ -8,7 +8,7 @@ public class BulletinBoard : MonoBehaviour
 {
     public static BulletinBoard Instance { get; private set; }
 
-    private bool isOpenList;
+    public bool isOpenList { get; private set; }
     
     [SerializeField] private RectTransform ListView;
     [SerializeField] private RectTransform DetailView;
@@ -24,6 +24,7 @@ public class BulletinBoard : MonoBehaviour
 
     public void OnClick(int index)
     {
+        Debug.Log(index);
         isOpenList = false;
         ListView.gameObject.SetActive(false);
         DetailView.gameObject.SetActive(true);

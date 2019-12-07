@@ -20,8 +20,8 @@ public class ParsingRequest : MonoBehaviour
     {
         string[] requests = RequestStatic.text.Split('\n');
         
-        /* 제목 이름 내용
-         * 
+        /* 
+         * 제목 이름 내용
          */
         
         foreach (string request in requests)

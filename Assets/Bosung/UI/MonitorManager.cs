@@ -34,7 +34,8 @@ public class MonitorManager : MonoBehaviour
             rectTransform.GetChild(2).GetComponent<Text>().text = CustomerManager.Customers[i - 1].Request.Name;
             
             Button button = rectTransform.GetComponent<Button>();
-            button.onClick.AddListener(() => BulletinBoard.Instance.OnClick(i));
+            int a = i - 1;
+            button.onClick.AddListener(() => BulletinBoard.Instance.OnClick(a));
             
             pos -= 40;
             
