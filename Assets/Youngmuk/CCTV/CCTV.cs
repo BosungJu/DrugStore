@@ -17,6 +17,7 @@ public class CCTV : MonoBehaviour
     {
         if (CameraScene.activeSelf) return;
             CameraScene.SetActive(true);
+        StopCoroutine("printtalk");
 
         ParsingComment.Parse();
 
@@ -25,12 +26,28 @@ public class CCTV : MonoBehaviour
         ParsingRequest.ParseName();
         ParsingRequest.Parse();
 
-        NameUI.GetComponent<Text>().text = "철수";
+        NameUI.GetComponent<Text>().text = ParsingRequest.Requests[Random.Range(0, ParsingRequest.Requests.Count)].Name;
 
         TalkText = TalkList[0];
 
-        StartCoroutine(printtalk());
+        StartCoroutine("printtalk");
 
+
+
+    }
+
+    public void GoBack()
+    {
+        if (CameraScene.activeSelf)
+        {
+            StopCoroutine("printtalk");
+            CameraScene.SetActive(false);
+        }
+    }
+
+    public void GoNext()
+    {
+        GameManager.Instance.isNight = !GameManager.Instance.isNight;
     }
 
     IEnumerator printtalk()
@@ -45,6 +62,8 @@ public class CCTV : MonoBehaviour
             }
             yield return new WaitForSeconds(1f);
         }
+        yield return new WaitForSeconds(1f);
+        CameraScene.SetActive(false);
     }
 
  

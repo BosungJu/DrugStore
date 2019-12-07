@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     private static bool isInit;
-    public bool isNight { get; private set; }
+    public bool isNight;
     public int Day { get; private set; }
 
     private void Awake()
