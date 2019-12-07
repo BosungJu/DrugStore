@@ -9,7 +9,7 @@ public class MonitorManager : MonoBehaviour
 {
     public static MonitorManager Instance { get; private set; }
     
-    private readonly float TopPos = -50f;
+    private readonly float TopPos = -40f;
     [SerializeField] private RectTransform Prefab;
     public List<RectTransform> Nodes;
     [SerializeField] private RectTransform parent;
@@ -36,7 +36,7 @@ public class MonitorManager : MonoBehaviour
             Button button = rectTransform.GetComponent<Button>();
             button.onClick.AddListener(() => BulletinBoard.Instance.OnClick(i));
             
-            pos -= 50;
+            pos -= 40;
             
             Nodes.Add(rectTransform);
         }

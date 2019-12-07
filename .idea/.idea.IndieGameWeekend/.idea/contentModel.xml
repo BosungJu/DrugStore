@@ -23,6 +23,7 @@
             <e p="BulletinBoard.cs" t="Include" />
             <e p="MonitorManager.cs" t="Include" />
             <e p="NavigationManager.cs" t="Include" />
+            <e p="RequestPaper.cs" t="Include" />
           </e>
         </e>
         <e p="Resources" t="Include">
@@ -40,7 +41,6 @@
           <e p="Board" t="Include">
             <e p="HoldonEvent.cs" t="Include" />
             <e p="NoticeBoard.cs" t="Include" />
-            <e p="TextData.cs" t="Include" />
           </e>
           <e p="CCTV" t="Include">
             <e p="CCTV.cs" t="Include" />

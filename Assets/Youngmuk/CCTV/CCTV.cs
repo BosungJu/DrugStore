@@ -22,8 +22,7 @@ public class CCTV : MonoBehaviour
         ParsingComment.Parse();
 
         TalkList = ParsingComment.Commnents[Random.Range(0, ParsingComment.Commnents.Count)];
-
-        ParsingRequest.ParseName();
+        
         ParsingRequest.Parse();
 
         NameUI.GetComponent<Text>().text = ParsingRequest.Requests[Random.Range(0, ParsingRequest.Requests.Count)].Name;
