@@ -15,6 +15,8 @@ public class NoticeBoard : MonoBehaviour
     int request_n = 0;
     public static int solve_n = 0;
 
+    public static int posion = 0;
+
     public static bool[,] itemsday = 
     {
         { false, false, false, false, false, false, false, false , false, false, false, false },
@@ -24,9 +26,9 @@ public class NoticeBoard : MonoBehaviour
 
     public static string[,] itemname =
     {
-        { "무지개", "날개", "태양", "유니콘", "탈주", "게임잼", "사무라이", "마피아", "탈주", "게임잼", "사무라이", "마피아"},
-        { "무지개", "날개", "태양", "유니콘", "탈주", "게임잼", "사무라이", "마피아", "탈주", "게임잼", "사무라이", "마피아"},
-        { "무지개", "날개", "태양", "유니콘", "탈주", "게임잼", "사무라이", "마피아", "탈주", "게임잼", "사무라이", "마피아"}
+        { "건전지", "귀신", "중절모", "손전등", "빛", "가족사진", "아기", "아기귀신", "ㅁ", "ㅁ", "ㅁ", "ㅁ"},
+        { "저울", "항아리", "양초", "깃털", "말", "태양", "PLX-360", "밀랍", "날개", "ㅁ", "ㅁ", "ㅁ"},
+        { "거울", "나무", "피", "null", "눈", "무지개", "뿔", "인형", "ㅁ", "ㅁ", "ㅁ", "ㅁ"}
     };
 
     List<GameObject> list = new List<GameObject>();
@@ -54,9 +56,9 @@ public class NoticeBoard : MonoBehaviour
 
     public void Extraction()
     {
-        if(request_n == 0 && solve_n == 0)
+        if(request_n == 0 && solve_n == 0 && GameManager.Instance.Day == 1 && posion <= 0)
         {
-
+            posion += 1;
         }
     }
 
@@ -129,16 +131,17 @@ public class NoticeBoard : MonoBehaviour
             Item[r].GetComponent<Image>().raycastTarget = true;
         }
 
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 12; i++)
         {
             if(itemsday[GameManager.Instance.Day - 1,i])
             {
                 for (int j = 0; j < Item.Count; j++)
                 {
-                    if(Item[j].GetComponent<HoldonEvent>().data.Equals(""))
+                    if(Item[j].GetComponent<HoldonEvent>().data.Equals("") && Item[j].activeSelf)
                     {
                         Item[j].GetComponent<HoldonEvent>().data = itemname[GameManager.Instance.Day - 1, i];
                         Item[j].GetComponent<HoldonEvent>().text.text = itemname[GameManager.Instance.Day - 1, i];
+                        break;
                     }
                 }
             }

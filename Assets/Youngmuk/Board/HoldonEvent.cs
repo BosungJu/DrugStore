@@ -58,6 +58,33 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                     break;
                 }
             }
+
+            if(data.Equals("아기"))
+            {
+                for (int i = 0; i < hit.Length; i++)
+                {
+                    if (hit[i].transform.gameObject.GetComponent< HoldonEvent>() && hit[i].transform.gameObject.GetComponent<HoldonEvent>().data.Equals("귀신"))
+                    {
+                        data = "아기귀신";
+                        text.text = data;
+                        hit[i].transform.gameObject.SetActive(false);
+                        break;
+                    }
+                }
+            }
+            else if (data.Equals("귀신"))
+            {
+                for (int i = 0; i < hit.Length; i++)
+                {
+                    if (hit[i].transform.gameObject.GetComponent<HoldonEvent>() && hit[i].transform.gameObject.GetComponent<HoldonEvent>().data.Equals("아기"))
+                    {
+                        data = "아기귀신";
+                        text.text = data;
+                        hit[i].transform.gameObject.SetActive(false);
+                        break;
+                    }
+                }
+            }
             follow_mouse = false;
         }
 
