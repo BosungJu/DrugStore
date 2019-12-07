@@ -9,6 +9,11 @@ public class PopUpChange : MonoBehaviour
     
     public GameObject NightPopUp;
     public GameObject RequestPopUp;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     
     public void OpenNight()
     {

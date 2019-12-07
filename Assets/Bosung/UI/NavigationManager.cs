@@ -12,9 +12,23 @@ public class NavigationManager : MonoBehaviour
 
     private string Time = "2019-12-";
     public SceneType NowScene;
+    public static NavigationManager Instance { get; private set; }
     
     [SerializeField] private List<GameObject> prefabs;
 
+    public void Init()
+    {
+        MonitorManager.Instance.AddList();
+        NowScene = SceneType.BulletinBoard;
+        for (int i = 0; i < prefabs.Count; ++i)
+        {
+            if (i != (int)NowScene)
+            {
+                prefabs[i].SetActive(false);
+            }
+        }
+    }
+    
     public void OnClick(int num)
     {
         NowScene = (SceneType)num;
@@ -40,19 +54,11 @@ public class NavigationManager : MonoBehaviour
 
     private void Awake()
     {
-        
+        Instance = this;
     }
 
     private void Start()
     {
-        MonitorManager.Instance.AddList();
-        NowScene = SceneType.BulletinBoard;
-        for (int i = 0; i < prefabs.Count; ++i)
-        {
-            if (i != (int)NowScene)
-            {
-                prefabs[i].SetActive(false);
-            }
-        }
+        
     }
 }

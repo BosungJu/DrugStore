@@ -24,8 +24,13 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             Day = 0;
-            ChangeAfternoon();
+            
         }
+    }
+
+    private void Start()
+    {
+        ChangeAfternoon();
     }
 
     public void ChangeNight()
@@ -33,15 +38,17 @@ public class GameManager : MonoBehaviour
         isNight = true;
         Night.SetActive(true);
         Afternoon.SetActive(false);
+        PopUpChange.Instance.NightPopUp.transform.parent.gameObject.SetActive(false);
     }
 
     public void ChangeAfternoon()
     {
         isNight = false;
         Night.SetActive(false);
-        Night.SetActive(false);
         Day++;
         DayText.text = "2019-12-" + (7 + Day);
+        PopUpChange.Instance.NightPopUp.transform.parent.gameObject.SetActive(true);
+        NavigationManager.Instance.Init();
     }
 
 }
