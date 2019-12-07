@@ -45,11 +45,6 @@ public class NoticeBoard : MonoBehaviour
 
     void Init()
     {
-<<<<<<< HEAD
-=======
-     
-
->>>>>>> cc8a70a7f3b603fbd09fa4158920362515dfa19c
         int random = Random.Range(0, ParsingRequest.Requests.Count);
         Debug.Log(ParsingRequest.Requests.Count + " " + random);
         solve_pro = 0;
