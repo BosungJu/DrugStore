@@ -6,12 +6,17 @@ public static class CustomerManager
 {
     public static List<Customer> Customers { get; private set; }
     private static readonly int MaxRequestCount = 5;
+    
     public static void AddCustomers()
     {
+        Customers = new List<Customer>();
+        
         ParsingRequest.ParseName();
         ParsingRequest.Parse();
         List<Request> requests = ParsingRequest.Requests;
         List<Request> onRequests = new List<Request>();
+        
+        Debug.Log(requests.Count);
         
         for (int i = 0; i < MaxRequestCount; ++i)
         {

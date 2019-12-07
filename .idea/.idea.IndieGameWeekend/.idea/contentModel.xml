@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\user\.Rider2019.2\system\extResources" t="IncludeRecursive" />
@@ -25,12 +25,21 @@
           <e p="Comments" t="Include">
             <e p="Comment_1.txt" t="Include" />
           </e>
+          <e p="Names.txt" t="Include" />
+          <e p="Request.txt" t="Include" />
+          <e p="Requests" t="Include">
+            <e p="Request_1.txt" t="Include" />
+          </e>
         </e>
         <e p="Youngmuk" t="Include">
+          <e p="CCTV" t="Include">
+            <e p="CCTV.cs" t="Include" />
+          </e>
           <e p="Person" t="Include">
             <e p="Person.cs" t="Include" />
           </e>
         </e>
+        <e p="시작_내레이션.txt" t="Include" />
       </e>
       <e p="IndieGameWeekend.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
