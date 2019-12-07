@@ -50,9 +50,6 @@ public class NoticeBoard : MonoBehaviour
 
     void Init()
     {
-        ParsingComment.Parse();
-        ParsingRequest.Parse();
-
         int random = Random.Range(0, ParsingRequest.Requests.Count);
         Debug.Log(ParsingRequest.Requests.Count + " " +random);
         solve_pro = 0;

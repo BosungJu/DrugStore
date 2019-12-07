@@ -5,7 +5,7 @@ using UnityEngine;
 public static class CustomerManager
 {
     public static List<Customer> Customers { get; private set; }
-    private static readonly int[] MaxRequestCount = {3, 2, 3};
+    private static readonly int[] MaxRequestCount = {1, 2, 3};
     
     public static void AddCustomers()
     {

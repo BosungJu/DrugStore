@@ -37,9 +37,16 @@ public class NavigationManager : MonoBehaviour
             }
         }
     }
-    
+
+    private void Awake()
+    {
+        
+    }
+
     private void Start()
     {
+        GameManager.Instance.isNight = false;
+        
         MonitorManager.Instance.AddList();
         NowScene = SceneType.BulletinBoard;
         for (int i = 0; i < prefabs.Count; ++i)

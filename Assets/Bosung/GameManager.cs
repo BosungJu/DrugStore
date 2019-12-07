@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    private static bool isInit;
+    private static bool isInit = false;
     public bool isNight;
     public int Day { get; private set; }
     public int ViewDay = 8;
@@ -16,10 +16,21 @@ public class GameManager : MonoBehaviour
     {
         if (!isInit)
         {
+            isNight = false;
             Instance = this;
             isInit = true;
-            Day = 1;
+            Day = 0;
         }
+
+        if (!isNight)
+        {
+            Day++;
+        }
+    }
+
+    public void ChangeNight()
+    {
+        isNight = true;
     }
     
 }
