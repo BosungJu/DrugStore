@@ -25,6 +25,7 @@
             <e p="Fade.cs" t="Include" />
             <e p="MonitorManager.cs" t="Include" />
             <e p="NavigationManager.cs" t="Include" />
+            <e p="NightSceneMove.cs" t="Include" />
             <e p="PopUpChange.cs" t="Include" />
             <e p="RequestButton.cs" t="Include" />
             <e p="RequestPaper.cs" t="Include" />
@@ -53,6 +54,9 @@
           <e p="DreamTv" t="Include">
             <e p="DreamTv.cs" t="Include" />
             <e p="NextImg.cs" t="Include" />
+          </e>
+          <e p="DrugRoom" t="Include">
+            <e p="DrugRoom.cs" t="Include" />
           </e>
           <e p="Person" t="Include">
             <e p="Person.cs" t="Include" />
