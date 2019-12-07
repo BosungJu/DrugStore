@@ -20,7 +20,7 @@ public class ParsingRequest : MonoBehaviour
     {
         string[] requests = RequestStatic.text.Split('\n');
         
-        /* 제목 이름 내용 의상
+        /* 제목 이름 내용
          * 
          */
         

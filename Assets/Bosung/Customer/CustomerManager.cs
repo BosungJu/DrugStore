@@ -5,16 +5,18 @@ using UnityEngine;
 public static class CustomerManager
 {
     public static List<Customer> Customers { get; private set; }
-    private static readonly int[] MaxRequestCount = {5, 2, 3};
+    private static readonly int[] MaxRequestCount = {3, 2, 3};
     
     public static void AddCustomers()
     {
         Customers = new List<Customer>();
         
         ParsingRequest.Parse();
-        List<Request> requests = ParsingRequest.Requests;
+        List<Request> requests = new List<Request>(ParsingRequest.Requests);
         List<Request> onRequests = new List<Request>();
 
+        Debug.Log(ParsingRequest.Requests.Count);
+        
         for (int i = 0; i < MaxRequestCount[GameManager.Instance.Day - 1]; ++i)
         {
             int random = Random.Range(0, requests.Count);
@@ -23,6 +25,8 @@ public static class CustomerManager
             requests.RemoveAt(random);
         }
 
+        Debug.Log(ParsingRequest.Requests.Count);
+        
         foreach (Request request in onRequests)
         {
             Customer customer = new Customer();

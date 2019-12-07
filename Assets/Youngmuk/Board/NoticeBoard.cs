@@ -23,9 +23,6 @@ public class NoticeBoard : MonoBehaviour
 
     private void Awake()
     {
-        ParsingComment.Parse();
-        ParsingRequest.Parse();
-
         pointerxy = Pointer.GetComponent<RectTransform>().position;
         for (int i = 0; i < Item.Count; i++)
             ItemPos.Add(Item[i].transform.position);
