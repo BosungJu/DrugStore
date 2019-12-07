@@ -133,6 +133,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 81405075}
     m_Modifications:
+    - target: {fileID: 113308336647028673, guid: 7f1d9dbe3514b4c4d84b2d7039dcc733,
+        type: 3}
+      propertyPath: TvOnOff.Array.data[8]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 113308336647028673, guid: 7f1d9dbe3514b4c4d84b2d7039dcc733,
+        type: 3}
+      propertyPath: TvOnOff.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 113308336647028673, guid: 7f1d9dbe3514b4c4d84b2d7039dcc733,
+        type: 3}
+      propertyPath: TvOnOff.Array.data[4]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 113308336647028674, guid: 7f1d9dbe3514b4c4d84b2d7039dcc733,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2401,6 +2416,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 81405075}
     m_Modifications:
+    - target: {fileID: 7681021541419092449, guid: 25962c37bbadbb642be7cede13c7cf2a,
+        type: 3}
+      propertyPath: m_Name
+      value: Mafia
+      objectReference: {fileID: 0}
     - target: {fileID: 7877277067255315769, guid: 25962c37bbadbb642be7cede13c7cf2a,
         type: 3}
       propertyPath: m_Name

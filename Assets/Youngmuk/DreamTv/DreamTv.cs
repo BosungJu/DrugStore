@@ -15,13 +15,12 @@ public class DreamTv : MonoBehaviour
     public static GameObject stext;
 
     public Text[] Hasitems;
-    public static Text[] sHasitems;
+    public static Text[] sHasitems = new Text[12];
     private void Awake()
     {
         for (int i = 0; i < 9; i++)
             Tv[i].SetActive(TvOnOff[i]);
         stext = text;
-        sHasitems = new Text[Hasitems.Length];
         for (int i = 0; i < Hasitems.Length; i++)
             sHasitems[i] = Hasitems[i];
     }
@@ -38,7 +37,7 @@ public class DreamTv : MonoBehaviour
         {
             if (NoticeBoard.itemsday[GameManager.Instance.Day - 1, i])
                 sHasitems[i].text = NoticeBoard.itemname[GameManager.Instance.Day - 1, i];
-            else
+            else if(sHasitems[i])
                 sHasitems[i].text = "";
         }
     }
