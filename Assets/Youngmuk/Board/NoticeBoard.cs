@@ -16,17 +16,17 @@ public class NoticeBoard : MonoBehaviour
     public static int solve_n = 0;
 
     public static bool[,] itemsday = 
-    { 
-        { false, false, false, false, false, false, false, false },
-        { false, false, false, false, false, false, false, false }, 
-        { false, false, false, false, false, false, false, false }
+    {
+        { false, false, false, false, false, false, false, false , false, false, false, false },
+        { false, false, false, false, false, false, false, false , false, false, false, false },
+        { false, false, false, false, false, false, false, false, false, false, false, false  }
     };
 
     public static string[,] itemname =
     {
-        { "무지개", "날개", "태양", "유니콘", "탈주", "게임잼", "사무라이", "마피아"},
-        { "무지개", "날개", "태양", "유니콘", "탈주", "게임잼", "사무라이", "마피아"},
-        { "무지개", "날개", "태양", "유니콘", "탈주", "게임잼", "사무라이", "마피아"}
+        { "무지개", "날개", "태양", "유니콘", "탈주", "게임잼", "사무라이", "마피아", "탈주", "게임잼", "사무라이", "마피아"},
+        { "무지개", "날개", "태양", "유니콘", "탈주", "게임잼", "사무라이", "마피아", "탈주", "게임잼", "사무라이", "마피아"},
+        { "무지개", "날개", "태양", "유니콘", "탈주", "게임잼", "사무라이", "마피아", "탈주", "게임잼", "사무라이", "마피아"}
     };
 
     List<GameObject> list = new List<GameObject>();
@@ -62,7 +62,7 @@ public class NoticeBoard : MonoBehaviour
 
     public static bool FindGetItem(string s)
     {
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 12; i++)
         {
             if (s.Equals(itemname[GameManager.Instance.Day - 1, i]))
             {
@@ -107,7 +107,7 @@ public class NoticeBoard : MonoBehaviour
             Item[i].GetComponent<HoldonEvent>().text.text = "";
         }
 
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 12; i++)
         {
             if (itemsday[GameManager.Instance.Day - 1, i])
                 count++;

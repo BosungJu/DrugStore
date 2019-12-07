@@ -34,7 +34,7 @@ public class DreamTv : MonoBehaviour
 
     public static void showItem()
     {
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 12; i++)
         {
             if (NoticeBoard.itemsday[GameManager.Instance.Day - 1, i])
                 sHasitems[i].text = NoticeBoard.itemname[GameManager.Instance.Day - 1, i];
