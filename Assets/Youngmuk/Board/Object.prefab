@@ -93,6 +93,7 @@ MonoBehaviour:
   set: 0
   data: 
   text: {fileID: 5527161617032802294}
+  camera: {fileID: 0}
 --- !u!61 &6412378268287375752
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -204,7 +205,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 4e645e47f6f845442a7b6a7bc4fe74d2, type: 3}
+    m_Font: {fileID: 12800000, guid: 92cac9609053f6949a78d4a1d0f20f5e, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0

@@ -13,6 +13,7 @@ public class NoticeBoard : MonoBehaviour
     int solve_pro = 0;
 
     public float font_x = 30;
+    public float font_y = 30;
 
     Vector2 pointerxy;
 
@@ -78,7 +79,7 @@ public class NoticeBoard : MonoBehaviour
             if (emp == '`')
             {
                 Text.GetComponent<Text>().text += '\n';
-                Pointer.GetComponent<RectTransform>().position += new Vector3(0, -29, 0);
+                Pointer.GetComponent<RectTransform>().position += new Vector3(0, -font_y, 0);
                 Pointer.GetComponent<RectTransform>().position = new Vector3(pointerxy.x, Pointer.GetComponent<RectTransform>().position.y, Pointer.GetComponent<RectTransform>().position.z);
             }
             else if (emp == '(')
