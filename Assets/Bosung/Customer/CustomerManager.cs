@@ -5,7 +5,7 @@ using UnityEngine;
 public static class CustomerManager
 {
     public static List<Customer> Customers { get; private set; }
-    private static readonly int MaxRequestCount = 5;
+    private static readonly int[] MaxRequestCount = {1, 2, 3};
     
     public static void AddCustomers()
     {
@@ -15,10 +15,8 @@ public static class CustomerManager
         ParsingRequest.Parse();
         List<Request> requests = ParsingRequest.Requests;
         List<Request> onRequests = new List<Request>();
-        
-        Debug.Log(requests.Count);
-        
-        for (int i = 0; i < MaxRequestCount; ++i)
+
+        for (int i = 0; i < MaxRequestCount[GameManager.Instance.Day - 1]; ++i)
         {
             int random = Random.Range(0, requests.Count);
             onRequests.Add(requests[random]);

@@ -15,13 +15,17 @@
             <e p="CustomerManager.cs" t="Include" />
           </e>
           <e p="GameManager.cs" t="Include" />
-          <e p="MonitorManager.cs" t="Include" />
           <e p="Request" t="Include">
             <e p="ParsingRequest.cs" t="Include" />
             <e p="Request.cs" t="Include" />
           </e>
+          <e p="UI" t="Include">
+            <e p="BulletinBoard.cs" t="Include" />
+            <e p="MonitorManager.cs" t="Include" />
+            <e p="NavigationManager.cs" t="Include" />
+          </e>
         </e>
-        <e p="Resourses" t="Include">
+        <e p="Resources" t="Include">
           <e p="Comments" t="Include">
             <e p="Comment_1.txt" t="Include" />
           </e>

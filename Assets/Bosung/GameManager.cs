@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private static bool isInit;
     public bool isNight { get; private set; }
     public int Day { get; private set; }
+    public int ViewDay = 8;
 
     private void Awake()
     {
@@ -20,5 +21,5 @@ public class GameManager : MonoBehaviour
             Day = 1;
         }
     }
-
+    
 }
