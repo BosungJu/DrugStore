@@ -90,9 +90,10 @@ public class NoticeBoard : MonoBehaviour
                         break;
                     check_Text += RequestText[j];
                 }
-                GameObject BlankObj = Instantiate(BlankObject, Pointer.transform.position, Quaternion.identity);
-                //BlankObj.transform.parent = transform;
+                GameObject BlankObj = Instantiate(BlankObject, Camera.main.ScreenToWorldPoint(new Vector3(Pointer.transform.position.x + 710, Pointer.transform.position.y + 460, 0)), Quaternion.identity);
+                BlankObj.transform.parent = transform;
                 BlankObj.transform.name = check_Text;
+                BlankObj.transform.position = new Vector3(BlankObj.transform.position.x, BlankObj.transform.position.y, 0);
                 list.Add(BlankObj);
                 solve_pro++;
                 Text.GetComponent<Text>().text += "_";

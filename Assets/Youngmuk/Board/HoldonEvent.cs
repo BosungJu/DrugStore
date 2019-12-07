@@ -13,6 +13,8 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public string data;
     public Text text;
 
+    public Camera camera;
+
     private void Start()
     {
         text.text = data;
@@ -23,7 +25,7 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void Update()
     {
         if(follow_mouse)
-            transform.position = Input.mousePosition;
+            GetComponent<RectTransform>().localPosition = Input.mousePosition - new Vector3(960,540,0);
     }
 
 
@@ -48,7 +50,7 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 if (hit[i].transform.name.Equals(data))
                 {
                     //Debug.Log(collider.name);
-                    transform.position = hit[i].transform.position;// + new Vector3(0,-10,0);
+                    transform.position = hit[i].transform.position + new Vector3(-0.5f,0,0);
                     GetComponent<HoldonEvent>().set = true;
                     hit[i].transform.gameObject.SetActive(false);
                     text.color = Color.green;
