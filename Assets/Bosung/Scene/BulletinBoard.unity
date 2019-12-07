@@ -532,7 +532,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Request: {fileID: 1747291058}
-  index: 0
 --- !u!224 &165193700 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8660008045552218026, guid: 463316fa454c105479ffb7c9ba4a15f0,
@@ -1715,6 +1714,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8660008045414352974}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &1685954492 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 515258672440769023, guid: c9b3185229cd7e841a6e28b43bc2aaac,
+    type: 3}
+  m_PrefabInstance: {fileID: 515258672651858584}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1737224617 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 992830214283816074, guid: 3dd2127ef5cf40d40a3ef9b0660f884a,
@@ -2004,6 +2009,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 751366780}
     m_Modifications:
+    - target: {fileID: 515258672889576393, guid: c9b3185229cd7e841a6e28b43bc2aaac,
+        type: 3}
+      propertyPath: detailView
+      value: 
+      objectReference: {fileID: 1685954492}
     - target: {fileID: 515258672889576405, guid: c9b3185229cd7e841a6e28b43bc2aaac,
         type: 3}
       propertyPath: m_Name

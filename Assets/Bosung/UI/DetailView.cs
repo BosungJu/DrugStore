@@ -10,22 +10,16 @@ public class DetailView : MonoBehaviour
     public static List<int> AllreadyInputIndexs = new List<int>();
     public static DetailView Instance { get; private set; }
 
+    public static bool[] AllowRequest = { false, false, false, false, false }; 
+
     private void Awake()
     {
         Instance = this;
     }
 
-    public void DisableButton()
+    public void DisableButton(int n)
     {
-        bool flag = false;
-        AllreadyInputIndexs.ForEach(x =>
-        {
-            if (x == BulletinBoard.Instance.nowIndex)
-            {
-                flag = true;
-            }
-        });
-        Debug.Log("Detail" + flag);
+        bool flag = AllowRequest[n];
         if (flag)
         {
             transform.GetChild(0).GetComponent<Image>().color = new Color(70f/255, 70f/255, 70f/255, 255f/255);

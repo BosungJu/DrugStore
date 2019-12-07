@@ -11,7 +11,7 @@ public class BulletinBoard : MonoBehaviour
     public bool isOpenList { get; private set; }
     
     [SerializeField] private RectTransform ListView;
-    [SerializeField] private RectTransform DetailView;
+    [SerializeField] private RectTransform detailView;
     public int nowIndex;
     
     private void Awake()
@@ -19,18 +19,19 @@ public class BulletinBoard : MonoBehaviour
         Instance = this;
         isOpenList = true;
         ListView.gameObject.SetActive(true);
-        DetailView.gameObject.SetActive(false);
+        detailView.gameObject.SetActive(false);
     }
 
     public void OnClick(int index)
     {
-        Debug.Log(index);
+        DetailView.Instance.DisableButton(index);
+        RequestPaper.index = index;
         isOpenList = false;
         ListView.gameObject.SetActive(false);
-        DetailView.gameObject.SetActive(true);
-        DetailView.GetChild(2).GetComponent<Text>().text = CustomerManager.Customers[index].Request.Title;
-        DetailView.GetChild(3).GetComponent<Text>().text = "이름: " + CustomerManager.Customers[index].Request.Name;
-        DetailView.GetChild(4).GetComponent<Text>().text = CustomerManager.Customers[index].Request.Text;
+        detailView.gameObject.SetActive(true);
+        detailView.GetChild(2).GetComponent<Text>().text = CustomerManager.Customers[index].Request.Title;
+        detailView.GetChild(3).GetComponent<Text>().text = "이름: " + CustomerManager.Customers[index].Request.Name;
+        detailView.GetChild(4).GetComponent<Text>().text = CustomerManager.Customers[index].Request.Text;
         nowIndex = index;
     }
 
@@ -38,6 +39,6 @@ public class BulletinBoard : MonoBehaviour
     {
         isOpenList = true;
         ListView.gameObject.SetActive(true);
-        DetailView.gameObject.SetActive(false);
+        detailView.gameObject.SetActive(false);
     }
 }

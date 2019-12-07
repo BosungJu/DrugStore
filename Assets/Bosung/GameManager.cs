@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         PopUpChange.Instance.NightPopUp.transform.parent.gameObject.SetActive(true);
         DetailView.AllreadyInputIndexs.Clear();
         RequestPaper.Instance.RequestReset();
-        DetailView.Instance.DisableButton();
+        //DetailView.Instance.DisableButton();
         NavigationManager.Instance.Init();
         Afternoon.SetActive(true);
         Debug.Log("Day = " + Day);
