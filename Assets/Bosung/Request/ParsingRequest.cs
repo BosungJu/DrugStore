@@ -11,7 +11,7 @@ public class ParsingRequest : MonoBehaviour
     public TextAsset RequestTxt;
     static TextAsset RequestStatic;
 
-    public static List<string> NameSet;
+    public static List<string> NameSet = new List<string>();
     public static List<Request> Requests { get; private set; }
 
     private void Awake()
@@ -23,7 +23,6 @@ public class ParsingRequest : MonoBehaviour
 
     public static void ParseName()
     {
-        NameSet = new List<string>();
         foreach (string name in NameStatic.text.Split('\n'))
         {
             NameSet.Add(name);
@@ -40,7 +39,7 @@ public class ParsingRequest : MonoBehaviour
         
         foreach (string request in requests)
         {
-            string[] req = request.Split(' ');
+            string[] req = request.Split('|');
             Request rq = new Request();
 
             rq.Name = NameSet[Random.Range(0, NameSet.Count)];
@@ -51,6 +50,8 @@ public class ParsingRequest : MonoBehaviour
 
             Requests.Add(rq);
         }
+
+
     }
     
 }
