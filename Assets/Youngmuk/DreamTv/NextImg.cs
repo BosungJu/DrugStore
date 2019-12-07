@@ -14,4 +14,14 @@ public class NextImg : MonoBehaviour
         foreach (GameObject emp in now_img)
             emp.SetActive(false);
     }
+
+
+    public void getItem(string s)
+    {
+        if(NoticeBoard.FindGetItem(s))
+        {
+            DreamTv.showtext(s + "를 획득했다.");
+            DreamTv.showItem();
+        }
+    }
 }

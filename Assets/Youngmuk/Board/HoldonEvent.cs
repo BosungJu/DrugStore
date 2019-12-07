@@ -50,7 +50,7 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 {
                     //Debug.Log(collider.name);
                     transform.position = hit[i].transform.position;
-                    //transform.localPosition -= new Vector3(text.text.Length * 8, 0, 0);
+                    NoticeBoard.solve_n--;
                     GetComponent<HoldonEvent>().set = true;
                     hit[i].transform.gameObject.SetActive(false);
                     text.color = Color.green;
