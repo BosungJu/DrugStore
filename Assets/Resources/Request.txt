@@ -1,5 +1,5 @@
-0 0 sds 2000
-0 1 sweweds 1000
-0 2 jkjk 200
-0 0 asdf 1000
-0 1 asdgh 10
+0|0|sds|text
+0|1|sweweds|text1
+0|2|jkjk|text2
+0|0|asdf|text3
+0|1|asdgh|text4

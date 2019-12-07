@@ -15,23 +15,33 @@
             <e p="CustomerManager.cs" t="Include" />
           </e>
           <e p="GameManager.cs" t="Include" />
-          <e p="MonitorManager.cs" t="Include" />
           <e p="Request" t="Include">
             <e p="ParsingRequest.cs" t="Include" />
             <e p="Request.cs" t="Include" />
           </e>
+          <e p="UI" t="Include">
+            <e p="BulletinBoard.cs" t="Include" />
+            <e p="MonitorManager.cs" t="Include" />
+            <e p="NavigationManager.cs" t="Include" />
+          </e>
         </e>
-        <e p="Resourses" t="Include">
+        <e p="Resources" t="Include">
           <e p="Comments" t="Include">
             <e p="Comment_1.txt" t="Include" />
           </e>
           <e p="Names.txt" t="Include" />
           <e p="Request.txt" t="Include" />
           <e p="Requests" t="Include">
+            <e p="Request.txt" t="Include" />
             <e p="Request_1.txt" t="Include" />
           </e>
         </e>
         <e p="Youngmuk" t="Include">
+          <e p="Board" t="Include">
+            <e p="HoldonEvent.cs" t="Include" />
+            <e p="NoticeBoard.cs" t="Include" />
+            <e p="TextData.cs" t="Include" />
+          </e>
           <e p="CCTV" t="Include">
             <e p="CCTV.cs" t="Include" />
           </e>
