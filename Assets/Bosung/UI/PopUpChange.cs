@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PopUpChange : MonoBehaviour
 {
+    public static PopUpChange Instance { get; private set; }
+    
     public GameObject NightPopUp;
     public GameObject RequestPopUp;
     
@@ -15,6 +18,7 @@ public class PopUpChange : MonoBehaviour
     public void OpenRequest()
     {
         RequestPopUp.SetActive(true);
+        RequestPopUp.transform.parent.GetComponent<Button>().interactable = false;
     }
 
     public void ClosePopUp()

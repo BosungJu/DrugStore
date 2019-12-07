@@ -34,6 +34,7 @@
           <e p="Comments" t="Include">
             <e p="Comment_1.txt" t="Include" />
           </e>
+          <e p="Dream.txt" t="Include" />
           <e p="Names.txt" t="Include" />
           <e p="Request.txt" t="Include" />
           <e p="Requests" t="Include">
@@ -48,6 +49,10 @@
           </e>
           <e p="CCTV" t="Include">
             <e p="CCTV.cs" t="Include" />
+          </e>
+          <e p="DreamTv" t="Include">
+            <e p="DreamTv.cs" t="Include" />
+            <e p="NextImg.cs" t="Include" />
           </e>
           <e p="Person" t="Include">
             <e p="Person.cs" t="Include" />
