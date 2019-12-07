@@ -6,20 +6,22 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-
-    private static bool isInit = false;
+    
     public bool isNight;
     public int Day { get; private set; }
     public int ViewDay = 8;
 
     private void Awake()
     {
-        if (!isInit)
+        if (Instance)
         {
             isNight = false;
             Instance = this;
-            isInit = true;
             Day = 0;
+        }
+        else
+        {
+            Instance = this;
         }
 
         if (!isNight)

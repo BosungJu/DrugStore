@@ -12,6 +12,7 @@ public class BulletinBoard : MonoBehaviour
     
     [SerializeField] private RectTransform ListView;
     [SerializeField] private RectTransform DetailView;
+    public int nowIndex;
     
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class BulletinBoard : MonoBehaviour
         DetailView.GetChild(2).GetComponent<Text>().text = CustomerManager.Customers[index].Request.Title;
         DetailView.GetChild(3).GetComponent<Text>().text = "이름: " + CustomerManager.Customers[index].Request.Name;
         DetailView.GetChild(4).GetComponent<Text>().text = CustomerManager.Customers[index].Request.Text;
+        nowIndex = index;
     }
 
     public void BackOnClick()
