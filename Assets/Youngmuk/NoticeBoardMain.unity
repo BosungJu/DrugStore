@@ -401,6 +401,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 415
       objectReference: {fileID: 0}
+    - target: {fileID: 3081081629240002563, guid: 3a7aff8333019de4b9ca51de0a8145e3,
+        type: 3}
+      propertyPath: font_x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081081629240002563, guid: 3a7aff8333019de4b9ca51de0a8145e3,
+        type: 3}
+      propertyPath: font_y
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3081081629240002564, guid: 3a7aff8333019de4b9ca51de0a8145e3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -511,6 +521,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: NoticeBoard
       objectReference: {fileID: 0}
+    - target: {fileID: 3081081629583756520, guid: 3a7aff8333019de4b9ca51de0a8145e3,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 92cac9609053f6949a78d4a1d0f20f5e,
+        type: 3}
     - target: {fileID: 3275194760780692833, guid: 3a7aff8333019de4b9ca51de0a8145e3,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -651,5 +667,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 415
       objectReference: {fileID: 0}
+    - target: {fileID: 7383193498162922839, guid: 3a7aff8333019de4b9ca51de0a8145e3,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 92cac9609053f6949a78d4a1d0f20f5e,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a7aff8333019de4b9ca51de0a8145e3, type: 3}
