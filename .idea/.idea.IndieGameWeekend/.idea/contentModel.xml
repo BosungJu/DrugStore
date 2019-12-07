@@ -32,10 +32,16 @@
           <e p="Names.txt" t="Include" />
           <e p="Request.txt" t="Include" />
           <e p="Requests" t="Include">
+            <e p="Request.txt" t="Include" />
             <e p="Request_1.txt" t="Include" />
           </e>
         </e>
         <e p="Youngmuk" t="Include">
+          <e p="Board" t="Include">
+            <e p="HoldonEvent.cs" t="Include" />
+            <e p="NoticeBoard.cs" t="Include" />
+            <e p="TextData.cs" t="Include" />
+          </e>
           <e p="CCTV" t="Include">
             <e p="CCTV.cs" t="Include" />
           </e>

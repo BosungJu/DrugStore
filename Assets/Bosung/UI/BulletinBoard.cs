@@ -17,6 +17,8 @@ public class BulletinBoard : MonoBehaviour
     {
         Instance = this;
         isOpenList = true;
+        ListView.gameObject.SetActive(true);
+        DetailView.gameObject.SetActive(false);
     }
 
     public void OnClick(int index)

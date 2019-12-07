@@ -7,7 +7,7 @@ public class NavigationManager : MonoBehaviour
 {
     public enum SceneType : int
     {
-        BulletinBoardMain = 0, CCTV = 1, Extraction = 2
+        BulletinBoard = 0, CCTV = 1, Extraction = 2
     }
 
     private string Time = "2019-12-";
@@ -23,12 +23,12 @@ public class NavigationManager : MonoBehaviour
         {
             if (i != (int)NowScene)
             {
-                prefabs[i].SetActive(false);
                 if (i == 0)
                 {
                     Debug.Log(MonitorManager.Instance.Nodes);
                     MonitorManager.Instance.Nodes.ForEach(x => x.gameObject.SetActive(false));
                 }
+                prefabs[i].SetActive(false);
             }
             else
             {
@@ -41,7 +41,7 @@ public class NavigationManager : MonoBehaviour
     private void Start()
     {
         MonitorManager.Instance.AddList();
-        NowScene = SceneType.BulletinBoardMain;
+        NowScene = SceneType.BulletinBoard;
         for (int i = 0; i < prefabs.Count; ++i)
         {
             if (i != (int)NowScene)
