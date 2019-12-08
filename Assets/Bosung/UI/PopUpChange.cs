@@ -10,6 +10,7 @@ public class PopUpChange : MonoBehaviour
     public GameObject NightPopUp;
     public GameObject RequestPopUp;
     public GameObject DoorPopUp;
+    public GameObject[] Result;
 
     private void Awake()
     {
@@ -31,12 +32,21 @@ public class PopUpChange : MonoBehaviour
     {
         DoorPopUp.SetActive(true);
     }
+
+    public void OpenResult()
+    {
+        Result[GameManager.Instance.Day - 1].SetActive(true);
+    }
     
     public void ClosePopUp()
     {
         NightPopUp.SetActive(false);
         RequestPopUp.SetActive(false);
         DoorPopUp.SetActive(false);
+        foreach (GameObject obj in Result)
+        {
+            obj.SetActive(false);
+        }
     }
     
 }

@@ -17,14 +17,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject Afternoon;
     public GameObject Night;
-<<<<<<< HEAD
     public GameObject Street;
-    
-=======
-
     public AudioSource click_sound;
 
->>>>>>> 6d9a37c582de39218dd6aa5a00f7333fc6d24a4d
     private void Awake()
     {
         if (Instance == null)
@@ -66,6 +61,7 @@ public class GameManager : MonoBehaviour
     {
         isNight = false;
         PopUpChange.Instance.ClosePopUp();
+        Street.SetActive(false);
         Night.SetActive(false);
         Day++;
         DayText.text = "2019-12-" + (7 + Day);
@@ -82,7 +78,7 @@ public class GameManager : MonoBehaviour
     {
         Night.transform.GetChild(0).gameObject.SetActive(false);
         Night.transform.GetChild(1).gameObject.SetActive(false);
-        Night.transform.GetChild(4).gameObject.SetActive(false);
+        Night.transform.GetChild(5).gameObject.SetActive(false);
         Street.SetActive(true);
     }
 

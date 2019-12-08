@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public class Person : MonoBehaviour
 {
     [Header("도착오브젝트")]
     public GameObject target;
-    static bool arrive = false; //도착여부
+    public bool arrive { get; set;} //도착여부
 
     [Header("손님종류")]
     public Customer.CustomerType type;
@@ -50,15 +51,20 @@ public class Person : MonoBehaviour
             Vector2 dic = target.transform.position - transform.position;
             dic = dic.normalized;
             GetComponent<Rigidbody2D>().velocity = dic * speed * Time.deltaTime;
-            if (Vector2.Distance(target.transform.position, transform.position) < speed / 60f)
+            if (Mathf.Abs(Vector2.Distance(target.transform.position, transform.position)) < 1)
                 arrive = true;
         }
         else
         {
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            Debug.Log("End");
+            if (target.CompareTag("EndPos"))
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 
     #endregion
+
+    
 }
