@@ -84,7 +84,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 5
+  type: 0
+  speed: 20
   ani: {fileID: 4994642925839841894}
 --- !u!1 &4994642925839841895
 GameObject:

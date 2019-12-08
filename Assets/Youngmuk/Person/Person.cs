@@ -36,19 +36,29 @@ public class Person : MonoBehaviour
     #endregion
 
     #region [이동]
+
     void Move()
     {
         if (!arrive)
         {
-            if (!target) { Debug.LogError("Target이 지정되지않았습니다. "); return; }
+            if (!target)
+            {
+                /*Debug.LogError("Target이 지정되지않았습니다. ");*/
+                return;
+            }
+
             Vector2 dic = target.transform.position - transform.position;
             dic = dic.normalized;
-            GetComponent<Rigidbody2D>().velocity = dic * speed;
-            if (Vector2.Distance(target.transform.position, transform.position) < speed/60f)
+            GetComponent<Rigidbody2D>().velocity = dic * speed * Time.deltaTime;
+            if (Vector2.Distance(target.transform.position, transform.position) < speed / 60f)
                 arrive = true;
         }
         else
+        {
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            Debug.Log("End");
+        }
     }
+
     #endregion
 }
