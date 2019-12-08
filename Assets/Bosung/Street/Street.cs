@@ -73,6 +73,8 @@ public class Street : MonoBehaviour
             NowCustomer = customer;
             requestPaper.SetActive(false);
             count++;
+            count = count > persons.Count - 1 ? persons.Count - 1 : count;
+            count = count < 0 ? 0 : count;
             persons.Add(Instantiate(objs[Random.Range(0,5)].transform, new Vector3(-810 / 100, Pivot.position.y, 0), Quaternion.identity, transform));
             persons[count].GetComponent<Person>().target = Pivot.gameObject;
             

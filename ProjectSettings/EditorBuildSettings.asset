@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Bosung/Scene/BulletinBoard.unity
     guid: 481ad24afa913dd43a94f5d580902c19
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 6c3fb23b7ecd16849a573e1b66844982
   m_configObjects: {}
