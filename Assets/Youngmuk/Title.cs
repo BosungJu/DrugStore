@@ -20,6 +20,6 @@ public class Title : MonoBehaviour
     IEnumerator Scene()
     {
         yield return new WaitForSeconds(0.55f);
-        SceneManager.LoadScene("BulletinBoard");
+        SceneManager.LoadScene("narration");
     }
 }

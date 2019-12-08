@@ -8,7 +8,7 @@ public class CCTV : MonoBehaviour
     public GameObject CameraScene;
     public GameObject TalkUI;
     public GameObject NameUI;
-
+    public GameObject Delnoise;
     public AudioSource text_s;
 
     public Image cctvimg;
@@ -17,6 +17,11 @@ public class CCTV : MonoBehaviour
     List<string> TalkList;
 
     string TalkText = "";
+
+    private void OnEnable()
+    {
+        Delnoise.SetActive(GameManager.Instance.Day != 3);
+    }
 
     public void OnClick(int a)
     {
@@ -28,11 +33,29 @@ public class CCTV : MonoBehaviour
 
         int r = 0;
         if (GameManager.Instance.Day == 1)
-            r = Random.Range(0, 2);
+        {
+            if (a == 2)
+                r = 0;
+            else if (a == 4)
+                r = 1;
+        }
         else if (GameManager.Instance.Day == 2)
-            r = Random.Range(2, 4);
+        {
+            if (a == 2)
+                r = 2;
+            else if (a == 4)
+                r = 3;
+        }
         else if (GameManager.Instance.Day == 3)
-            r = Random.Range(4, 7);
+        {
+            if (a == 2)
+                r = 4;
+            else if (a == 4)
+                r = 5;
+            else if (a == 8)
+                r = 6;
+        }
+
         TalkList = ParsingComment.Commnents[r];
         
         ParsingRequest.Parse();
@@ -43,7 +66,14 @@ public class CCTV : MonoBehaviour
 
         StartCoroutine("printtalk");
         GameManager.Instance.playclicksound();
-        cctvimg.sprite = spr[Random.Range(0, spr.Length)];
+        int pr = 0;
+        if (a == 2)
+            pr = 0;
+        else if (a == 4)
+            pr = 1;
+        else if (a == 8)
+            pr = 2;
+        cctvimg.sprite = spr[pr];
 
 
     }
@@ -65,19 +95,21 @@ public class CCTV : MonoBehaviour
 
     IEnumerator printtalk()
     {
-        for(int j = 0; j < TalkList.Count; j++)
+        while (true)
         {
-            TalkText = TalkList[j];
-            for (int i = 0; i <= TalkText.Length; i++)
+            for (int j = 0; j < TalkList.Count; j++)
             {
-                TalkUI.GetComponent<Text>().text = TalkText.Substring(0, i);
-                text_s.Play();
-                yield return new WaitForSeconds(0.1f);
+                TalkText = TalkList[j];
+                for (int i = 0; i <= TalkText.Length; i++)
+                {
+                    TalkUI.GetComponent<Text>().text = TalkText.Substring(0, i);
+                    text_s.Play();
+                    yield return new WaitForSeconds(0.1f);
+                }
+                yield return new WaitForSeconds(1f);
             }
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
         }
-        yield return new WaitForSeconds(1f);
-        CameraScene.SetActive(false);
     }
 
  

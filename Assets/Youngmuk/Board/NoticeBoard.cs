@@ -10,7 +10,7 @@ public class NoticeBoard : MonoBehaviour
     public GameObject BlankObject;
     public GameObject BlackPos;
     public GameObject sub;
-
+    public GameObject btn;
     public static bool[] solveList = { false, false, false, false, false };
 
     public static int request_n = 0;
@@ -74,6 +74,13 @@ public class NoticeBoard : MonoBehaviour
                 solveList[i] = true;
                 posion += 1;
                 Text.GetComponent<Text>().text = "추출이 완료 되었습니다.";
+                btn.SetActive(false);
+                for (int j = 0; j < Item.Count; j++)
+                {
+                    Item[j].SetActive(false);
+                    Item[j].GetComponent<HoldonEvent>().data = "";
+                    Item[j].GetComponent<HoldonEvent>().text.text = "";
+                }
             }
         }
     }
@@ -99,7 +106,7 @@ public class NoticeBoard : MonoBehaviour
     void Init()
     {
         solve_n = 0;
-
+        btn.SetActive(true);
         Debug.Log(ParsingRequest.Requests.Count + " " + request_n);
 
         TitleText.GetComponent<Text>().text = ParsingRequest.Requests[request_n].Name;

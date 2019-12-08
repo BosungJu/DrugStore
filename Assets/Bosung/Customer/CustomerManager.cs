@@ -6,15 +6,15 @@ public static class CustomerManager
 {
     public static List<Customer> Customers { get; private set; }
     private static readonly int[] MaxRequestCount = {1, 2, 2};
-    
+
     public static void AddCustomers()
     {
         Customers = new List<Customer>();
-        
+
         ParsingRequest.Parse();
         List<Request> requests = new List<Request>(ParsingRequest.Requests);
         List<Request> onRequests = new List<Request>();
-
+        Debug.Log(requests.Count);
         for (int i = 0; i < MaxRequestCount[GameManager.Instance.Day - 1]; ++i)
         {
             int random = 0;
