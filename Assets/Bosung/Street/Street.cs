@@ -68,16 +68,14 @@ public class Street : MonoBehaviour
 
     public IEnumerator CreateCustomer()
     {
-        person.GetComponent<Person>().target = Pivot.gameObject;
-        
         foreach (Customer customer in CustomerManager.Customers)
         {
-            int direction = Random.Range(0, 2);
             NowCustomer = customer;
             requestPaper.SetActive(false);
             count++;
-            persons.Add(Instantiate(person, new Vector3((direction == 0 ? -810f : 810f) / 100, Pivot.position.y, 0), Quaternion.identity, transform));
-
+            persons.Add(Instantiate(objs[Random.Range(0,5)].transform, new Vector3(-810 / 100, Pivot.position.y, 0), Quaternion.identity, transform));
+            persons[count].GetComponent<Person>().target = Pivot.gameObject;
+            
             while (!persons[count].GetComponent<Person>().arrive) { yield return new WaitForEndOfFrame();}
 
             if (NoticeBoard.solveList[count])
@@ -93,7 +91,7 @@ public class Street : MonoBehaviour
 
             while (!customer.Request.End)  {  yield return  new WaitForEndOfFrame(); }
 
-            persons[count].GetComponent<Person>().target = direction == 0 ? Right : Left;
+            persons[count].GetComponent<Person>().target = Right;
             persons[count].GetComponent<Person>().arrive = false;
             
             count++;
