@@ -33,7 +33,7 @@ public class NavigationManager : MonoBehaviour
     public void OnClick(int num)
     {
         NowScene = (SceneType)num;
-
+        GameManager.Instance.playclicksound();
         for (int i = 0; i < prefabs.Count; ++i)
         {
             if (i != (int)NowScene)

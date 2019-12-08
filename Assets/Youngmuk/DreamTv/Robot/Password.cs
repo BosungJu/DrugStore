@@ -13,9 +13,10 @@ public class Password : MonoBehaviour
     public GameObject[] now_img;
     public GameObject[] next_img;
     public GameObject[] next_img2;
-
+    public AudioSource error_sound;
     public void nextimg(GameObject[] a, GameObject[] b)
     {
+        GameManager.Instance.playclicksound();
         foreach (GameObject emp in a)
             emp.SetActive(true);
         foreach (GameObject emp in b)
@@ -29,6 +30,7 @@ public class Password : MonoBehaviour
 
     public void OK()
     {
+        GameManager.Instance.playclicksound();
         if (s.Equals(answer))
         {
             if(!NoticeBoard.itemsday[1,6])
@@ -40,18 +42,21 @@ public class Password : MonoBehaviour
         {
             s = "ERROR";
             text.text = s;
+            error_sound.Play();
         }
     }
 
     public void Cancle()
     {
+        GameManager.Instance.playclicksound();
         s = "";
         text.text = s;
     }
 
     public void inputnum(string n)
     {
-        if(s.Length < 4)
+        GameManager.Instance.playclicksound();
+        if (s.Length < 4)
             s += n;
         else if(s.Length > 4)
             s = n;

@@ -17,8 +17,14 @@ public class GameManager : MonoBehaviour
 
     public GameObject Afternoon;
     public GameObject Night;
+<<<<<<< HEAD
     public GameObject Street;
     
+=======
+
+    public AudioSource click_sound;
+
+>>>>>>> 6d9a37c582de39218dd6aa5a00f7333fc6d24a4d
     private void Awake()
     {
         if (Instance == null)
@@ -27,6 +33,11 @@ public class GameManager : MonoBehaviour
             Day = 0;
             
         }
+    }
+
+    public void playclicksound()
+    {
+        click_sound.Play();
     }
 
     private void Start()

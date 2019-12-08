@@ -9,6 +9,11 @@ public class CCTV : MonoBehaviour
     public GameObject TalkUI;
     public GameObject NameUI;
 
+    public AudioSource text_s;
+
+    public Image cctvimg;
+    public Sprite[] spr;
+
     List<string> TalkList;
 
     string TalkText = "";
@@ -21,7 +26,14 @@ public class CCTV : MonoBehaviour
 
         ParsingComment.Parse();
 
-        TalkList = ParsingComment.Commnents[Random.Range(0, ParsingComment.Commnents.Count)];
+        int r = 0;
+        if (GameManager.Instance.Day == 1)
+            r = Random.Range(0, 2);
+        else if (GameManager.Instance.Day == 2)
+            r = Random.Range(2, 4);
+        else if (GameManager.Instance.Day == 3)
+            r = Random.Range(4, 7);
+        TalkList = ParsingComment.Commnents[r];
         
         ParsingRequest.Parse();
 
@@ -30,13 +42,15 @@ public class CCTV : MonoBehaviour
         TalkText = TalkList[0];
 
         StartCoroutine("printtalk");
-
+        GameManager.Instance.playclicksound();
+        cctvimg.sprite = spr[Random.Range(0, spr.Length)];
 
 
     }
 
     public void GoBack()
     {
+        GameManager.Instance.playclicksound();
         if (CameraScene.activeSelf)
         {
             StopCoroutine("printtalk");
@@ -57,6 +71,7 @@ public class CCTV : MonoBehaviour
             for (int i = 0; i <= TalkText.Length; i++)
             {
                 TalkUI.GetComponent<Text>().text = TalkText.Substring(0, i);
+                text_s.Play();
                 yield return new WaitForSeconds(0.1f);
             }
             yield return new WaitForSeconds(1f);

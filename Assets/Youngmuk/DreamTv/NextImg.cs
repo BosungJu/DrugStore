@@ -9,6 +9,7 @@ public class NextImg : MonoBehaviour
 
     public void nextimg()
     {
+        GameManager.Instance.playclicksound();
         foreach (GameObject emp in next_img)
             emp.SetActive(true);
         foreach (GameObject emp in now_img)
@@ -20,6 +21,7 @@ public class NextImg : MonoBehaviour
     {
         if(NoticeBoard.FindGetItem(s))
         {
+            GameManager.Instance.playclicksound();
             DreamTv.showtext(s + "를 획득했다.");
             DreamTv.showItem();
         }

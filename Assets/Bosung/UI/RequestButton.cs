@@ -13,6 +13,7 @@ public class RequestButton : MonoBehaviour
     public bool inDoorRoom { get; private set; }
     private void OnEnable()
     {
+        GameManager.Instance.playclicksound();
         Debug.Log(RequestPaper.Instance.Requests.Count);
         if (RequestPaper.Instance.Requests.Count > 0) { Debug.Log(RequestPaper.Instance.Requests[0].Name); }
         RequestPaper.Instance.SetRequest();

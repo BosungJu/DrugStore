@@ -48,6 +48,7 @@ public class RequestList : MonoBehaviour
 
     public void GoProblem(int n)
     {
+        GameManager.Instance.playclicksound();
         NoticeBoard.request_n = n;
         main.SetActive(true);
         gameObject.SetActive(false);
