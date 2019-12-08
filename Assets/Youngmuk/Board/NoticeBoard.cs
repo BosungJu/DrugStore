@@ -60,6 +60,7 @@ public class NoticeBoard : MonoBehaviour
 
     public void goback()
     {
+        GameManager.Instance.playclicksound();
         sub.SetActive(true);
         this.gameObject.SetActive(false);
     }

@@ -11,6 +11,7 @@ public class RequestButton : MonoBehaviour
     public Text txt;
     private void OnEnable()
     {
+        GameManager.Instance.playclicksound();
         Debug.Log(RequestPaper.Instance.Requests.Count);
         if (RequestPaper.Instance.Requests.Count > 0) { Debug.Log(RequestPaper.Instance.Requests[0].Name); }
         RequestPaper.Instance.SetRequest();

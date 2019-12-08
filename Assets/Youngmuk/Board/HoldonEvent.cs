@@ -36,19 +36,22 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         if(!set)
+        {
             follow_mouse = true;
+            GameManager.Instance.playclicksound();
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         if (!set)
         {
-            RaycastHit2D[] hit = Physics2D.BoxCastAll((Vector2)transform.position + GetComponent<BoxCollider2D>().offset, GetComponent<BoxCollider2D>().size, 0, Vector2.zero);
+            RaycastHit2D[] hit = Physics2D.BoxCastAll((Vector2)transform.position + GetComponent<BoxCollider2D>().offset, new Vector2(0.1f, 0.1f), 0, Vector2.zero);
             for (int i = 0; i < hit.Length; i++)
             {
                 if (hit[i].transform.name.Equals(data))
                 {
-                    //Debug.Log(collider.name);
+                    GameManager.Instance.playclicksound();
                     transform.position = hit[i].transform.position;
                     NoticeBoard.solve_n--;
                     GetComponent<HoldonEvent>().set = true;
@@ -68,6 +71,7 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         data = "아기귀신";
                         text.text = data;
                         hit[i].transform.gameObject.SetActive(false);
+                        GameManager.Instance.playclicksound();
                         break;
                     }
                 }
@@ -81,6 +85,7 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         data = "아기귀신";
                         text.text = data;
                         hit[i].transform.gameObject.SetActive(false);
+                        GameManager.Instance.playclicksound();
                         break;
                     }
                 }
@@ -94,6 +99,7 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         data = "밀랍";
                         text.text = data;
                         hit[i].transform.gameObject.SetActive(false);
+                        GameManager.Instance.playclicksound();
                         break;
                     }
                 }
@@ -107,6 +113,7 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         data = "밀랍";
                         text.text = data;
                         hit[i].transform.gameObject.SetActive(false);
+                        GameManager.Instance.playclicksound();
                         break;
                     }
                 }
@@ -120,11 +127,12 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         data = "날개";
                         text.text = data;
                         hit[i].transform.gameObject.SetActive(false);
+                        GameManager.Instance.playclicksound();
                         break;
                     }
                 }
             }
-            else if (data.Equals("미랍"))
+            else if (data.Equals("밀랍"))
             {
                 for (int i = 0; i < hit.Length; i++)
                 {
@@ -133,6 +141,7 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         data = "날개";
                         text.text = data;
                         hit[i].transform.gameObject.SetActive(false);
+                        GameManager.Instance.playclicksound();
                         break;
                     }
                 }
@@ -146,6 +155,7 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         data = "유니콘";
                         text.text = data;
                         hit[i].transform.gameObject.SetActive(false);
+                        GameManager.Instance.playclicksound();
                         break;
                     }
                 }
@@ -159,6 +169,7 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         data = "유니콘";
                         text.text = data;
                         hit[i].transform.gameObject.SetActive(false);
+                        GameManager.Instance.playclicksound();
                         break;
                     }
                 }
@@ -172,6 +183,7 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         data = "저주";
                         text.text = data;
                         hit[i].transform.gameObject.SetActive(false);
+                        GameManager.Instance.playclicksound();
                         break;
                     }
                 }
@@ -185,6 +197,7 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         data = "저주";
                         text.text = data;
                         hit[i].transform.gameObject.SetActive(false);
+                        GameManager.Instance.playclicksound();
                         break;
                     }
                 }
@@ -198,6 +211,7 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         data = "저주인형";
                         text.text = data;
                         hit[i].transform.gameObject.SetActive(false);
+                        GameManager.Instance.playclicksound();
                         break;
                     }
                 }
@@ -211,6 +225,7 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         data = "저주인형";
                         text.text = data;
                         hit[i].transform.gameObject.SetActive(false);
+                        GameManager.Instance.playclicksound();
                         break;
                     }
                 }
@@ -224,6 +239,7 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         data = "부두술";
                         text.text = data;
                         hit[i].transform.gameObject.SetActive(false);
+                        GameManager.Instance.playclicksound();
                         break;
                     }
                 }
@@ -237,6 +253,7 @@ public class HoldonEvent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                         data = "부두술";
                         text.text = data;
                         hit[i].transform.gameObject.SetActive(false);
+                        GameManager.Instance.playclicksound();
                         break;
                     }
                 }

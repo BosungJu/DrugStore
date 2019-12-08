@@ -24,6 +24,7 @@ public class BulletinBoard : MonoBehaviour
 
     public void OnClick(int index)
     {
+        GameManager.Instance.playclicksound();
         DetailView.Instance.DisableButton(index);
         RequestPaper.index = index;
         isOpenList = false;

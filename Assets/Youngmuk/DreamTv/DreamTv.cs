@@ -64,6 +64,7 @@ public class DreamTv : MonoBehaviour
 
     public void OnClick(int a)
     {
+        GameManager.Instance.playclicksound();
         if (CameraScene[a - 1].activeSelf) return;
         CameraScene[a - 1].SetActive(true);
 
