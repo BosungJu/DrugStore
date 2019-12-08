@@ -8,6 +8,7 @@ public class ParsingRequest : MonoBehaviour
 
     public TextAsset RequestTxt;
     static TextAsset RequestStatic;
+    private static bool isParse = false;
     public static List<Request> Requests { get; private set; }
 
     private void Awake()
@@ -18,6 +19,8 @@ public class ParsingRequest : MonoBehaviour
 
     public static void Parse()
     {
+        if (isParse) return;
+        
         string[] requests = RequestStatic.text.Split('\n');
         
         /* 
@@ -38,7 +41,7 @@ public class ParsingRequest : MonoBehaviour
             Requests.Add(rq);
         }
 
-
+        isParse = true;
     }
     
 }

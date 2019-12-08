@@ -24,7 +24,7 @@ public class MonitorManager : MonoBehaviour
         CustomerManager.AddCustomers();
         
         float pos = TopPos;
-        
+        Debug.Log(CustomerManager.Customers.Count);
         for (int i = CustomerManager.Customers.Count; i > 0; --i)
         {
             RectTransform rectTransform = Instantiate(Prefab, parent);

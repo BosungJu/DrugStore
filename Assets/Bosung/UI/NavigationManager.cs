@@ -13,6 +13,8 @@ public class NavigationManager : MonoBehaviour
     private string Time = "2019-12-";
     public SceneType NowScene;
 
+    private static bool isParse = false;
+    
     public static NavigationManager Instance { get; private set; }
     
     [SerializeField] private List<GameObject> prefabs;
