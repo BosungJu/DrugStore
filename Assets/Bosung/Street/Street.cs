@@ -14,6 +14,7 @@ public class Street : MonoBehaviour
     public Transform person;
     public GameObject requestPaper;
     private List<Transform> persons;
+    public List<GameObject> objs;
 
     public GameObject Left;
     public GameObject Right;
