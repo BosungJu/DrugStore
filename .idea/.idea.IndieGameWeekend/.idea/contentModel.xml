@@ -21,6 +21,9 @@
             <e p="Request.cs" t="Include" />
           </e>
           <e p="Story.cs" t="Include" />
+          <e p="Street" t="Include">
+            <e p="Street.cs" t="Include" />
+          </e>
           <e p="UI" t="Include">
             <e p="BulletinBoard.cs" t="Include" />
             <e p="DetailView.cs" t="Include" />
@@ -49,6 +52,7 @@
           <e p="Board" t="Include">
             <e p="HoldonEvent.cs" t="Include" />
             <e p="NoticeBoard.cs" t="Include" />
+            <e p="RequestList.cs" t="Include" />
           </e>
           <e p="CCTV" t="Include">
             <e p="CCTV.cs" t="Include" />
@@ -56,6 +60,9 @@
           <e p="DreamTv" t="Include">
             <e p="DreamTv.cs" t="Include" />
             <e p="NextImg.cs" t="Include" />
+            <e p="Robot" t="Include">
+              <e p="Password.cs" t="Include" />
+            </e>
           </e>
           <e p="DrugRoom" t="Include">
             <e p="DrugRoom.cs" t="Include" />

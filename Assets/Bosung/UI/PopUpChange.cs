@@ -9,6 +9,7 @@ public class PopUpChange : MonoBehaviour
     
     public GameObject NightPopUp;
     public GameObject RequestPopUp;
+    public GameObject DoorPopUp;
 
     private void Awake()
     {
@@ -26,10 +27,16 @@ public class PopUpChange : MonoBehaviour
         RequestPopUp.transform.parent.GetComponent<Button>().interactable = false;
     }
 
+    public void OpenDoorPopUp()
+    {
+        DoorPopUp.SetActive(true);
+    }
+    
     public void ClosePopUp()
     {
         NightPopUp.SetActive(false);
         RequestPopUp.SetActive(false);
+        DoorPopUp.SetActive(false);
     }
     
 }

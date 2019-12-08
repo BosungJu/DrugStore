@@ -9,4 +9,6 @@ public class Request
     public string Title { get; set; }
     public Customer.CostumeColor Color { get; set; }
     public string Text { get; set; }
+    public bool IsComplete { get; set; }
+    public bool End { get; set; }
 }
