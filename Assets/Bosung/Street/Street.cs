@@ -18,7 +18,7 @@ public class Street : MonoBehaviour
     public GameObject Left;
     public GameObject Right;
 
-    private static int count = 0;
+    private static int count = -1;
     private Customer NowCustomer;
 
     private Coroutine coro;
@@ -67,8 +67,6 @@ public class Street : MonoBehaviour
 
     public IEnumerator CreateCustomer()
     {
-        int count = -1;
-
         person.GetComponent<Person>().target = Pivot.gameObject;
         
         foreach (Customer customer in CustomerManager.Customers)
@@ -78,7 +76,7 @@ public class Street : MonoBehaviour
             requestPaper.SetActive(false);
             count++;
             persons.Add(Instantiate(person, new Vector3((direction == 0 ? -810f : 810f) / 100, Pivot.position.y, 0), Quaternion.identity, transform));
-            Debug.Log(persons[count].position);
+
             while (!persons[count].GetComponent<Person>().arrive) { yield return new WaitForEndOfFrame();}
 
             if (NoticeBoard.solveList[count])

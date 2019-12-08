@@ -17,6 +17,14 @@ public class DetailView : MonoBehaviour
         Instance = this;
     }
 
+    public void ReSet()
+    {
+        for (var i = 0; i < AllowRequest.Length; i++)
+        {
+            AllowRequest[i] = false;
+        }
+    }
+
     public void DisableButton(int n)
     {
         bool flag = AllowRequest[n];
