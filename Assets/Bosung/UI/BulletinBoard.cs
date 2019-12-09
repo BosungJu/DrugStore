@@ -13,11 +13,16 @@ public class BulletinBoard : MonoBehaviour
     [SerializeField] private RectTransform ListView;
     [SerializeField] private RectTransform detailView;
     public int nowIndex;
-    
+
     private void Awake()
     {
         Instance = this;
         isOpenList = true;
+    }
+
+    private void Start()
+    {
+ 
         ListView.gameObject.SetActive(true);
         detailView.gameObject.SetActive(false);
     }

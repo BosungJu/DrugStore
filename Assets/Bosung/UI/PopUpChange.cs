@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PopUpChange : MonoBehaviour
 {
@@ -41,8 +40,6 @@ public class PopUpChange : MonoBehaviour
     
     public void ClosePopUp()
     {
-        if(GameManager.Instance.Day == 3)
-            SceneManager.LoadScene("End");
         NightPopUp.SetActive(false);
         RequestPopUp.SetActive(false);
         DoorPopUp.SetActive(false);

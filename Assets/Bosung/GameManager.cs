@@ -5,13 +5,14 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     
     public bool isNight;
-    public Text DayText;
+    public Text[] DayText;
     
     public int Day { get; private set; }
 
@@ -44,6 +45,10 @@ public class GameManager : MonoBehaviour
     {
         isNight = true;
         Night.SetActive(true);
+        for(int i = 0; i < DayText.Length; i++)
+            DayText[i].text = "2019-12-" + (7 + Day);
+        if (GameManager.Instance.Day == 4)
+            SceneManager.LoadScene("End");
         MonitorManager.Instance.Nodes.ForEach(x => Destroy(x.gameObject));
         MonitorManager.Instance.Nodes.Clear();
         if (!BulletinBoard.Instance.isOpenList) BulletinBoard.Instance.BackOnClick();
@@ -64,7 +69,10 @@ public class GameManager : MonoBehaviour
         Street.SetActive(false);
         Night.SetActive(false);
         Day++;
-        DayText.text = "2019-12-" + (7 + Day);
+        if (GameManager.Instance.Day == 4)
+            SceneManager.LoadScene("End");
+        for (int i = 0; i < DayText.Length; i++)
+            DayText[i].text = "2019-12-" + (7 + Day);
         PopUpChange.Instance.NightPopUp.transform.parent.gameObject.SetActive(true);
         DetailView.AllreadyInputIndexs.Clear();
         RequestPaper.Instance.RequestReset();
