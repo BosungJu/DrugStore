@@ -67,6 +67,7 @@
           <e p="DrugRoom" t="Include">
             <e p="DrugRoom.cs" t="Include" />
           </e>
+          <e p="EndGame.cs" t="Include" />
           <e p="narration.cs" t="Include" />
           <e p="Person" t="Include">
             <e p="Person.cs" t="Include" />
